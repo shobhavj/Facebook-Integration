@@ -104,22 +104,15 @@ class ViewController: UIViewController{
                             let json = try JSONSerialization.jsonObject(with: data) as? [String: Any],
                             let blogs = json["data"] as? [[String: Any]] {
                             for blog in blogs {
+                                
                                 if let story = blog["story"] as? String {
                                     self.stories.append(story)
                                 }
-//                                if let source = blog["source"] as? String {
-//                                    self.sources.append(source)
-//                                }
-//                                if let link = blog["link"] as? String {
-//                                    self.links.append(link)
-//                                }
                             
                                 if let createdTime = blog["created_time"] as? String{
                                     self.createdTimeList.append(createdTime)
                                 }
-//                                if let source = blog["source"] as? String{
-//                                    self.sources.append(source)
- //                               }
+
                                 if let place = blog["place"] as?  [[String: Any]] {
                                     for places in place{
                                         if let location = places["location"] as? [[String: Any]] {
@@ -134,37 +127,29 @@ class ViewController: UIViewController{
                                                 }
                                             }
                                         }
+                                    }
                                 }
-                                }
+                                
                                 if let type = blog["type"] as? String{
                                     self.types.append(type)
-                                    //print("TYPES COUNT",(self.types.count))
-                                  // print(self.types)
-                                   
                                 }
-                                if (self.types.count == blogs.count)
-                                {
+                                
+                                if (self.types.count == blogs.count){
                                     for i in 0 ..< self.types.count{
-                                        
-                                        if "video" == self.types[i]
-                                        {
+                                        if "video" == self.types[i]{
                                             if let video = blog["source"] as? String{
                                                 self.videos.append(video)
-                                              //  print("Videos ",(self.videos.count))
                                             }
-                                        }else if "photo" == self.types[i]
-                                        {
+                                        }else if "photo" == self.types[i]{
                                             if let photo = blog["picture"] as? String{
                                                 self.images.append(photo)
                                                print("Images",(self.images))
                                             }
                                         }
-                                        else if "status" == self.types[i]
-                                        {
+                                        else if "status" == self.types[i]{
                                             
                                         }
-                                        else if "link" == self.types[i]
-                                        {
+                                        else if "link" == self.types[i]{
                                             if let link = blog["link"] as? String{
                                                 self.links.append(link)
                                                 print("Links ", (self.links.count))
@@ -172,17 +157,12 @@ class ViewController: UIViewController{
                                         }
                                     }
                                 }
-                            
                             }
                             
-                            
-                            
                             for i in 0 ..< self.createdTimeList.count{
-                                
                                 let str1 = self.createdTimeList[i]
                                 let index1 = str1.index(of: "T") ?? str1.endIndex
                                 let date = str1[..<index1]
-                                
                                 let str2 = self.createdTimeList[i]
                                 let start = str2.index(str2.startIndex, offsetBy: 11)
                                 let end = str2.index(str2.endIndex, offsetBy: -8)
@@ -198,8 +178,6 @@ class ViewController: UIViewController{
         }
         task.resume()
     }
-
-        
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -219,11 +197,7 @@ class ViewController: UIViewController{
             postStatusController.videoDetails = videos
             postStatusController.linkDetails = links
             postStatusController.typeDetails = types
-            
-            
-           
             }
-
         }
     }
 
