@@ -254,6 +254,11 @@
 					370851291F8E96EB00476BF5 = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					370851401F8E96EC00476BF5 = {
 						CreatedOnToolsVersion = 9.0;

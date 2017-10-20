@@ -93,7 +93,7 @@ class ViewController: UIViewController{
          let acessToken = String(format:"%@", FBSDKAccessToken.current().tokenString) as String
          print("ACESSS TOKEN     :", (acessToken))
        
-        let url = URL(string: "https://graph.facebook.com/v2.10/me/posts?fields=story,created_time,permalink_url,parent_id,with_tags,from,message,icon,link,message_tags,picture,privacy,shares,type,id,place,source&access_token=EAACEdEose0cBAOSezEH9pAH2AY6cxgk6ZAqVIc95oQYCvCNo8U5VDqFQCbNRxZBfPaIBcSEteND4WdrIBUvvfplapPE9ExbazpZAeTOFEfcyHoXEkF5ewhl6VIzeitc3B5UG5W6QkMc4OjWsJ2ZBELOEcaIHWDDFKs5PmyjhzcsrI88ldoGfWNDcZCIgXG6MZD")!
+        let url = URL(string: "https://graph.facebook.com/v2.10/me/posts?fields=story,created_time,permalink_url,parent_id,with_tags,from,message,icon,link,message_tags,picture,privacy,shares,type,id,place,source&access_token=EAACEdEose0cBAExgvCDBLZBFSNZAVxHokuZCdn16nDEFBp62VDU8Jk2NLWA1fsjLYCVbNu9gs7hABpQqV5dZCdOhD3VZAlgHn48MxXyLfIlJkSIcjdsKhXkgQwjj0yxn7iOpA6jXpxoBpdYsqF9ACWWewMmZBCOmyB4J8PhUSYWfunRykm4dTPLIC4j9b4yaAZD")!
         
       //    Uri targetUri = new Uri("https://graph.facebook.com/oauth/access_token?client_id=" + ConfigurationManager.AppSettings["FacebookAppId"] + "&client_secret=" + ConfigurationManager.AppSettings["FacebookAppSecret"] + "&redirect_uri=http://" + Request.ServerVariables["SERVER_NAME"] + ":" + Request.ServerVariables["SERVER_PORT"] + "/account/user.aspx&code=" + code);
         
@@ -143,7 +143,6 @@ class ViewController: UIViewController{
                                         }else if "photo" == self.types[i]{
                                             if let photo = blog["picture"] as? String{
                                                 self.images.append(photo)
-                                               print("Images",(self.images))
                                             }
                                         }
                                         else if "status" == self.types[i]{

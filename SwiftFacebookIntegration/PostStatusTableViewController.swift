@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import AVFoundation
+import AVKit
 
-class newCell : UITableViewCell{
+private var playerViewControllerKVOContext = 0
+
+class newCell : UITableViewCell,AVPictureInPictureControllerDelegate{
     
     
     @IBOutlet weak var userName: UILabel!
@@ -69,7 +73,6 @@ class PostStatusTableViewController: UITableViewController{
        
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostDetail", for: indexPath) as! newCell
         switch(typeDetails[indexPath.row]){
-        
              case "video":
                 if indexPath.section == 0{
                     let cell = tableView.dequeueReusableCell(withIdentifier: "PostDetail", for: indexPath) as! newCell
@@ -78,6 +81,15 @@ class PostStatusTableViewController: UITableViewController{
                     cell.storyDetailsLbl.text = storyDetails[indexPath.row]
                     cell.dateLbl.text = dateDetails[indexPath.row]
                     cell.timeLbl.text = timeDetails[indexPath.row]
+                    
+                    
+                   
+                    
+                    
+                    
+                    
+                    
+                    
                     return cell
                 }
        
@@ -96,12 +108,10 @@ class PostStatusTableViewController: UITableViewController{
                     let imageUrl = imageDetails[i]
                     let url = URL(string:imageUrl)
                     print("URL  :",(url)!)
-                    DispatchQueue.global().async {
-                        let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-                        DispatchQueue.main.async {
-                            cell1.detailImageLbl1.image = UIImage(data: data!)
-                        }
-                    }
+                    let data = try? Data(contentsOf: url!)
+                    cell1.detailImageLbl1.image = UIImage(data: data!)
+                       
+                    
                 }
             return cell1
             }
@@ -112,18 +122,7 @@ class PostStatusTableViewController: UITableViewController{
         }
     return cell
     }
-//        var moviePlayer : MPMoviePlayerController?
-//
-//        let url = NSURL (string: "http://jplayer.org/video/m4v/Big_Buck_Bunny_Trailer.m4v")
-//        moviePlayer = MPMoviePlayerController(contentURL: url)
-//        if let player = moviePlayer {
-//            player.view.frame = CGRectMake(0, 100, view.bounds.size.width, 180)
-//            player.prepareToPlay()
-//            player.controlStyle = .None
-//            player.repeatMode = .One
-//            player.scalingMode = .AspectFit
-//            cell.addSubview(player.view)
-        
+
         
         
 //        AVPlayerViewController *playerViewController = [[AVPlayerViewController alloc] init];
