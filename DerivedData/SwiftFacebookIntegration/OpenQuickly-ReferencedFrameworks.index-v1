@@ -7,7 +7,9 @@
 	<string>CoreData</string>
 	<string>SwiftFacebookIntegration</string>
 	<string>FBSDKCoreKit</string>
+	<string>AVKit</string>
 	<string>UIKit</string>
+	<string>AVFoundation</string>
 	<string>FBSDKLoginKit</string>
 </array>
 </plist>

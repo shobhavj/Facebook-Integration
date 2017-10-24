@@ -1,7 +1,7 @@
 version: "Apple Swift version 4.0 (swiftlang-900.0.65 clang-900.0.37)"
 options: "e791cb22811aa22205ae44721fd5ada4"
-build_time: [1508527698, 27807000]
+build_time: [1508878078, 670252000]
 inputs:
-  "/Users/shobhavj/Documents/SwiftFacebookIntegration/SwiftFacebookIntegration/ViewController.swift": [1508527676, 0]
-  "/Users/shobhavj/Documents/SwiftFacebookIntegration/SwiftFacebookIntegration/AppDelegate.swift": [1508198329, 0]
-  "/Users/shobhavj/Documents/SwiftFacebookIntegration/SwiftFacebookIntegration/PostStatusTableViewController.swift": [1508527676, 0]
+  "/Users/shobhavj/Documents/SwiftFacebookIntegration/SwiftFacebookIntegration/ViewController.swift": [1508877647, 0]
+  "/Users/shobhavj/Documents/SwiftFacebookIntegration/SwiftFacebookIntegration/AppDelegate.swift": [1508528260, 0]
+  "/Users/shobhavj/Documents/SwiftFacebookIntegration/SwiftFacebookIntegration/PostStatusTableViewController.swift": [1508878078, 0]

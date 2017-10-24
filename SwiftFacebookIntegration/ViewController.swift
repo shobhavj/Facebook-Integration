@@ -91,9 +91,9 @@ class ViewController: UIViewController{
         let session: URLSession  = URLSession.init(configuration: sessionConfig)
 
          let acessToken = String(format:"%@", FBSDKAccessToken.current().tokenString) as String
-         print("ACESSS TOKEN     :", (acessToken))
+       //  print("ACESSS TOKEN     :", (acessToken))
        
-        let url = URL(string: "https://graph.facebook.com/v2.10/me/posts?fields=story,created_time,permalink_url,parent_id,with_tags,from,message,icon,link,message_tags,picture,privacy,shares,type,id,place,source&access_token=EAACEdEose0cBAExgvCDBLZBFSNZAVxHokuZCdn16nDEFBp62VDU8Jk2NLWA1fsjLYCVbNu9gs7hABpQqV5dZCdOhD3VZAlgHn48MxXyLfIlJkSIcjdsKhXkgQwjj0yxn7iOpA6jXpxoBpdYsqF9ACWWewMmZBCOmyB4J8PhUSYWfunRykm4dTPLIC4j9b4yaAZD")!
+        let url = URL(string: "https://graph.facebook.com/v2.10/me/posts?fields=story,caption,name,description,created_time,permalink_url,parent_id,with_tags,from,message,icon,link,message_tags,picture,privacy,shares,type,id,place,source&access_token=EAACEdEose0cBAPq7GZBlreJOVHvTZAKkkQbMdwMBZB8lh9dlQAJAtChSJPfVgNkaqgNGpYZAri7szCP0ZBoDaa4L137dPFInsYAzRTTszmSdYsJrFanRF3MSinEhFzKF61ZADAZC3tjv8LTYyjpPZCHwpm9O4XlIenOScdtbgJmmR7GDiSeVeXkHElbclQZBjBmQZD")!
         
       //    Uri targetUri = new Uri("https://graph.facebook.com/oauth/access_token?client_id=" + ConfigurationManager.AppSettings["FacebookAppId"] + "&client_secret=" + ConfigurationManager.AppSettings["FacebookAppSecret"] + "&redirect_uri=http://" + Request.ServerVariables["SERVER_NAME"] + ":" + Request.ServerVariables["SERVER_PORT"] + "/account/user.aspx&code=" + code);
         
@@ -118,12 +118,12 @@ class ViewController: UIViewController{
                                         if let location = places["location"] as? [[String: Any]] {
                                             for loc in location{
                                                 if let city = loc["city"] as? String{
-                                                print("CITY   ",(city))
+                                                  print("CITY   ",(city))
                                                     self.locations.append(city)
-                                                    print(self.locations)
+                                                   print(self.locations)
                                                 }
                                                 if let country = loc["country"] as? String{
-                                                    print("COUNTRY  ",(country))
+                                               print("COUNTRY  ",(country))
                                                 }
                                             }
                                         }
@@ -131,31 +131,35 @@ class ViewController: UIViewController{
                                 }
                                 
                                 if let type = blog["type"] as? String{
-                                    self.types.append(type)
-                                }
-                                
-                                if (self.types.count == blogs.count){
-                                    for i in 0 ..< self.types.count{
-                                        if "video" == self.types[i]{
-                                            if let video = blog["source"] as? String{
-                                                self.videos.append(video)
-                                            }
-                                        }else if "photo" == self.types[i]{
-                                            if let photo = blog["picture"] as? String{
-                                                self.images.append(photo)
-                                            }
-                                        }
-                                        else if "status" == self.types[i]{
+                                   // print("BLOG",type)
+                                    
+                                    if "photo" == type {
+                                    //    print(blog["picture"]!)
+                                        if let photoblogs = blog["picture"] as? String{
+                                            self.images.append(photoblogs)
                                             
-                                        }
-                                        else if "link" == self.types[i]{
-                                            if let link = blog["link"] as? String{
-                                                self.links.append(link)
-                                                print("Links ", (self.links.count))
-                                            }
+                                    }
+                                    }
+                                    
+                                    else if "video" == type{
+                                        if let videoblogs = blog["source"] as? String{
+                                            self.videos.append(videoblogs)
+                                         
                                         }
                                     }
+                                    else if "link" == type{
+
+                                        if let linkblogs = blog["name"] as? String{
+                                            self.links.append(linkblogs)
+                                            
+                                        }
+                                    }
+                                    
+                                    self.types.append(type)
+                                    print(self.types)
+                           
                                 }
+
                             }
                             
                             for i in 0 ..< self.createdTimeList.count{
@@ -168,6 +172,7 @@ class ViewController: UIViewController{
                                 let time = str2[start..<end]
                                 self.times.append(String(describing: time))
                                 self.dates.append(String(describing: date))
+                                
                                 }
                             }
                       

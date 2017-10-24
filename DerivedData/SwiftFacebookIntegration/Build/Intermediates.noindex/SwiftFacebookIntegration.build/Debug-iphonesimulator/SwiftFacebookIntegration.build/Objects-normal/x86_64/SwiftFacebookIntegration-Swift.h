@@ -174,6 +174,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_feature(modules)
 @import UIKit;
 @import Foundation;
+@import AVKit;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -251,13 +252,27 @@ SWIFT_CLASS("_TtC24SwiftFacebookIntegration9imageCell")
 @end
 
 
+SWIFT_CLASS("_TtC24SwiftFacebookIntegration15linkNstatusCell")
+@interface linkNstatusCell : UITableViewCell
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified profilePic2;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified username2;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified story;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified dateLbl2;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified timeLbl2;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified locationLbl2;
+- (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER SWIFT_AVAILABILITY(ios,introduced=3.0);
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 SWIFT_CLASS("_TtC24SwiftFacebookIntegration7newCell")
-@interface newCell : UITableViewCell
+@interface newCell : UITableViewCell <AVPictureInPictureControllerDelegate>
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified userName;
 @property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified profilePic;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified storyDetailsLbl;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified dateLbl;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified timeLbl;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified images;
 - (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER SWIFT_AVAILABILITY(ios,introduced=3.0);
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
