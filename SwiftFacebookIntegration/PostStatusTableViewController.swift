@@ -10,40 +10,6 @@ import UIKit
 import AVFoundation
 import AVKit
 
-private var playerViewControllerKVOContext = 0
-
-class newCell : UITableViewCell,AVPictureInPictureControllerDelegate{
-   
-    @IBOutlet weak var userName: UILabel!
-    @IBOutlet weak var profilePic: UIImageView!
-    @IBOutlet weak var storyDetailsLbl: UILabel!
-    @IBOutlet weak var dateLbl: UILabel!
-    @IBOutlet weak var timeLbl: UILabel!
-    @IBOutlet weak var images: UIImageView!
-    
-}
-
-class imageCell : UITableViewCell{
-    
-    @IBOutlet weak var profilePic1: UIImageView!
-    @IBOutlet weak var userName1: UILabel!
-    @IBOutlet weak var dateLbl1: UILabel!
-    @IBOutlet weak var timeLbl1: UILabel!
-    @IBOutlet weak var storyDetailsLbl1: UILabel!
-    @IBOutlet weak var locationLbl1: UILabel!
-    @IBOutlet weak var detailImageLbl1: UIImageView!
-    
-}
-
-class linkNstatusCell : UITableViewCell{
-    
-    @IBOutlet weak var profilePic2: UIImageView!
-    @IBOutlet weak var username2: UILabel!
-    @IBOutlet weak var story: UILabel!
-    @IBOutlet weak var dateLbl2: UILabel!
-    @IBOutlet weak var timeLbl2: UILabel!
-    @IBOutlet weak var locationLbl2: UILabel!
-}
 class PostStatusTableViewController: UITableViewController{
     
     var nameFromFb: String? = nil
@@ -57,21 +23,34 @@ class PostStatusTableViewController: UITableViewController{
     var imageDetails = [String]()
     var videoDetails = [String]()
     var typeDetails = [String]()
-    var i = 0
-    
-    
+    var statusDetails = [String]()
+   
+    var avPlayer: AVPlayer!
+    var visibleIP : IndexPath?
+    var aboutToBecomeInvisibleCell = -1
+    var avPlayerLayer: AVPlayerLayer!
+    var paused: Bool = false
+    var videoURLs = Array<URL>()
+    var firstLoad = true
+  
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         self.navigationItem.rightBarButtonItem = self.editButtonItem
+        for i in 0 ..< videoDetails.count {
+            let url = URL(string:videoDetails[i])
+            videoURLs.append(url!)
+        }
+        visibleIP = IndexPath.init(row: 0, section: 0)
+        //self.tableView.reloadData()
     }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
- 
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -81,108 +60,141 @@ class PostStatusTableViewController: UITableViewController{
         return typeDetails.count
     }
 
-
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PostDetail", for: indexPath) as! newCell
-        //print("Details : ",typeDetails[indexPath.row])
-        
-        cell.userName.text = nameFromFb
-        cell.profilePic.image = profileImage
-        cell.storyDetailsLbl.text = storyDetails[indexPath.row]
-        cell.dateLbl.text = dateDetails[indexPath.row]
-        cell.timeLbl.text = timeDetails[indexPath.row]
-        switch(typeDetails[indexPath.row])
-        {
-        case "photo":
-
-            let imageUrl = imageDetails[i]
-            let url = URL(string:imageUrl)
-            let data = try? Data(contentsOf: url!)
-            cell.images.isHidden = false
-            cell.images.image = UIImage(data: data!)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ImageDetail", for: indexPath) as! imageCell
+        cell.userName1.text = nameFromFb
+        cell.profilePic1.image = profileImage
+        cell.storyDetailsLbl1.text = storyDetails[indexPath.row]
+        cell.dateLbl1.text = dateDetails[indexPath.row]
+        cell.timeLbl1.text = timeDetails[indexPath.row]
+       
+        switch(typeDetails[indexPath.row]){
             
-            break
+            case "photo":
+                cell.videoPlayerSuperView.isHidden = true
+                for image in imageDetails{
+                let imageUrl = image
+                let url = URL(string:imageUrl)
+                let data = try? Data(contentsOf: url!)
+                cell.images1.isHidden = false
+                cell.images1.image = UIImage(data: data!)
+                }
+                break
             
-        case "video":
-            cell.images.isHidden = true
-            break
+            case "link" :
+                 cell.videoPlayerSuperView.isHidden = true
+                 for link in linkDetails{
+                 cell.storyDetailsLbl1.text = link
+                 }
+                 break
             
-        case "link" :
-            cell.storyDetailsLbl.text = linkDetails[i]
-        case "status" :
-        
-            break
-        
+            case "status" :
+                cell.videoPlayerSuperView.isHidden = true
+                for status in statusDetails{
+                cell.storyDetailsLbl1.text = status
+                }
+                break
+            
+            case "video":
+                cell.images1.isHidden = true
+                cell.videoPlayerSuperView.isHidden = false
+                for video in videoURLs{
+                let urls = video
+                cell.videoPlayerItem = AVPlayerItem.init(url: urls)
+                }
+                break
             default:
-            break
-        
+                break
+                
         }
-    
-        return cell
+            return cell
     }
- 
+    
+    
+    // A notification is fired and seeker is sent to the beginning to loop the video again
+    @objc func playerItemDidReachEnd(notification: Notification) {
+        let p: AVPlayerItem = notification.object as! AVPlayerItem
+        p.seek(to: kCMTimeZero, completionHandler: nil)
+    }
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let indexPaths = self.tableView.indexPathsForVisibleRows
+        var cells = [Any]()
+        for ip in indexPaths!{
+            if let videoCell = self.tableView.cellForRow(at: ip) as? imageCell{
+                cells.append(videoCell)
+            }
+        }
+        let cellCount = cells.count
+        if cellCount == 0 {return}
+        if cellCount == 1{
+            //print ("visible = \(String(describing: indexPaths?[0]))")
+            if visibleIP != indexPaths?[0]{
+                visibleIP = indexPaths?[0]
+            }
+            if let videoCell = cells.last! as? imageCell{
+                self.playVideoOnTheCell(cell: videoCell, indexPath: (indexPaths?.last)!)
+            }
+        }
+        if cellCount >= 2 {
+            for i in 0..<cellCount{
+                let cellRect = self.tableView.rectForRow(at: (indexPaths?[i])!)
+                let intersect = cellRect.intersection(self.tableView.bounds)
+                
+                let currentHeight = intersect.height
+               // print("\n \(currentHeight)")
+                let cellHeight = (cells[i] as AnyObject).frame.size.height
+                if currentHeight > (cellHeight * 0.95){
+                    if visibleIP != indexPaths?[i]{
+                        visibleIP = indexPaths?[i]
+                      //  print ("visible = \(String(describing: indexPaths?[i]))")
+                        if let videoCell = cells[i] as? imageCell{
+                            self.playVideoOnTheCell(cell: videoCell, indexPath: (indexPaths?[i])!)
+                        }
+                    }
+                }
+                else{
+                    if aboutToBecomeInvisibleCell != indexPaths?[i].row{
+                        aboutToBecomeInvisibleCell = (indexPaths?[i].row)!
+                        if let videoCell = cells[i] as? imageCell{
+                            self.stopPlayBack(cell: videoCell, indexPath: (indexPaths?[i])!)
+                        }
+                        
+                    }
+                }
+            }
+        }
+    }
+    
+    func checkVisibilityOfCell(cell : imageCell, indexPath : IndexPath){
+        let cellRect = self.tableView.rectForRow(at: indexPath)
+        let completelyVisible = self.tableView.bounds.contains(cellRect)
+        if completelyVisible {
+            self.playVideoOnTheCell(cell: cell, indexPath: indexPath)
+        }
+        else{
+            if aboutToBecomeInvisibleCell != indexPath.row{
+                aboutToBecomeInvisibleCell = indexPath.row
+                self.stopPlayBack(cell: cell, indexPath: indexPath)
+            }
+        }
+    }
+    
+    func playVideoOnTheCell(cell : imageCell, indexPath : IndexPath){
+        cell.startPlayback()
+    }
+    
+    func stopPlayBack(cell : imageCell, indexPath : IndexPath){
+        cell.stopPlayback()
+    }
+    
+    override func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+      //  print("end = \(indexPath)")
+        if let videoCell = cell as? imageCell{
+            videoCell.stopPlayback()
+        }
+        
+        paused = true
+    }
+  
 }
-//        switch(typeDetails[indexPath.row]){
-//             case "video":
-//                print("Index ",(typeDetails[indexPath.row]))
-//
-//                    let cell = tableView.dequeueReusableCell(withIdentifier: "PostDetail", for: indexPath) as! newCell
-//                    cell.userName.text = nameFromFb
-//                    cell.profilePic.image = profileImage
-//                    cell.storyDetailsLbl.text = storyDetails[indexPath.row]
-//                    cell.dateLbl.text = dateDetails[indexPath.row]
-//                    cell.timeLbl.text = timeDetails[indexPath.row]
-//
-//                    return cell
-//
-//
-//            case "photo":
-//
-//                    print("In indexPath 1 ",(indexPath.section))
-//                let cell1 :imageCell = tableView.dequeueReusableCell(withIdentifier: "ImageDetail", for: indexPath) as! imageCell
-//                print(indexPath.row)
-//                print(typeDetails[indexPath.row])
-//                cell1.userName1.text = nameFromFb
-//                cell1.profilePic1.image = profileImage
-//                cell1.storyDetailsLbl1.text = storyDetails[indexPath.row]
-//                cell1.dateLbl1.text = dateDetails[indexPath.row]
-//                cell1.timeLbl1.text = timeDetails[indexPath.row]
-//
-//                for i in 0..<imageDetails.count{
-//                    let imageUrl = imageDetails[i]
-//                    let url = URL(string:imageUrl)
-//                    print("URL  :",(url)!)
-//                    let data = try? Data(contentsOf: url!)
-//                    cell1.detailImageLbl1.image = UIImage(data: data!)
-//
-//
-//                }
-//            return cell1
-//
-//        case "link":
-//            print("IndexPathSection ",indexPath.section)
-//
-//                let cell2 : linkNstatusCell = tableView.dequeueReusableCell(withIdentifier: "LinknStatusDetail",for: indexPath) as! linkNstatusCell
-//                cell2.username2.text = nameFromFb
-//                cell2.profilePic2.image = profileImage
-//                cell2.dateLbl2.text = dateDetails[indexPath.row]
-//                cell2.timeLbl2.text = timeDetails[indexPath.row]
-//
-//
-//        default:
-//            print("Image and Videos not present")
-//
-//        }
-//    return cell
-
-
-        
-        
-//        AVPlayerViewController *playerViewController = [[AVPlayerViewController alloc] init];
-//        playerViewController.player = [AVPlayer playerWithURL:[[NSURL alloc] initWithString:@"http://www.ebookfrenzy.com/ios_book/movie/movie.mov"]];
-//        [cell addSubview:playerViewController.view];
-//        [cache setValue:cell forKey:[NSString stringWithFormat:@"key%lu", indexPath.row]];
-   
-   
-

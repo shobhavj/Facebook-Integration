@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3701A5301FA0FCB600A8FC27 /* imageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3701A52F1FA0FCB600A8FC27 /* imageCell.swift */; };
 		3708512E1F8E96EB00476BF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3708512D1F8E96EB00476BF5 /* AppDelegate.swift */; };
 		370851301F8E96EB00476BF5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3708512F1F8E96EB00476BF5 /* ViewController.swift */; };
 		370851331F8E96EB00476BF5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 370851311F8E96EB00476BF5 /* Main.storyboard */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3701A52F1FA0FCB600A8FC27 /* imageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageCell.swift; sourceTree = "<group>"; };
 		3708512A1F8E96EB00476BF5 /* SwiftFacebookIntegration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftFacebookIntegration.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3708512D1F8E96EB00476BF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3708512F1F8E96EB00476BF5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				3708513C1F8E96EB00476BF5 /* Info.plist */,
 				370851341F8E96EB00476BF5 /* SwiftFacebookIntegration.xcdatamodeld */,
 				37BD0DE31F8E9D4400D25861 /* ObjCBridg.h */,
+				3701A52F1FA0FCB600A8FC27 /* imageCell.swift */,
 			);
 			path = SwiftFacebookIntegration;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 			files = (
 				370851301F8E96EB00476BF5 /* ViewController.swift in Sources */,
 				3708512E1F8E96EB00476BF5 /* AppDelegate.swift in Sources */,
+				3701A5301FA0FCB600A8FC27 /* imageCell.swift in Sources */,
 				370851361F8E96EB00476BF5 /* SwiftFacebookIntegration.xcdatamodeld in Sources */,
 				37F4CEF21F97BBA400CE6FC5 /* PostStatusTableViewController.swift in Sources */,
 			);

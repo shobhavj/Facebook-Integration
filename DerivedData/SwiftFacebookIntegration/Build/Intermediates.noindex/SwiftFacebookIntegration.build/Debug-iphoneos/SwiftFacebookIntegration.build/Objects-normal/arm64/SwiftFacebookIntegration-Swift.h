@@ -204,6 +204,7 @@ SWIFT_CLASS("_TtC24SwiftFacebookIntegration11AppDelegate")
 
 @class UITableView;
 @class UITableViewCell;
+@class UIScrollView;
 @class NSBundle;
 @class NSCoder;
 
@@ -214,6 +215,9 @@ SWIFT_CLASS("_TtC24SwiftFacebookIntegration29PostStatusTableViewController")
 - (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView SWIFT_WARN_UNUSED_RESULT;
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
 - (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+- (void)playerItemDidReachEndWithNotification:(NSNotification * _Nonnull)notification;
+- (void)scrollViewDidScroll:(UIScrollView * _Nonnull)scrollView;
+- (void)tableView:(UITableView * _Nonnull)tableView didEndDisplayingCell:(UITableViewCell * _Nonnull)cell forRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 - (nonnull instancetype)initWithStyle:(UITableViewStyle)style OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
@@ -236,28 +240,22 @@ SWIFT_CLASS("_TtC24SwiftFacebookIntegration14ViewController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class UIView;
 
 SWIFT_CLASS("_TtC24SwiftFacebookIntegration9imageCell")
 @interface imageCell : UITableViewCell
-@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified profilePic1;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified dummyLabel;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified userName1;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified dateLbl1;
-@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified timeLbl1;
-@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified storyDetailsLbl1;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified images;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified profilePic1;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified locationLbl1;
-@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified detailImageLbl1;
-- (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER SWIFT_AVAILABILITY(ios,introduced=3.0);
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
-SWIFT_CLASS("_TtC24SwiftFacebookIntegration7newCell")
-@interface newCell : UITableViewCell
-@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified userName;
-@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified profilePic;
-@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified storyDetailsLbl;
-@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified dateLbl;
-@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified timeLbl;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified timeLbl1;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified images1;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified storyDetailsLbl1;
+@property (nonatomic, weak) IBOutlet UIView * _Null_unspecified videoPlayerSuperView;
+- (void)awakeFromNib;
+- (void)playerItemDidReachEndWithNotification:(NSNotification * _Nonnull)notification;
 - (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER SWIFT_AVAILABILITY(ios,introduced=3.0);
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end

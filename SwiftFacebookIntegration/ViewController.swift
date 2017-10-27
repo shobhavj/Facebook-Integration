@@ -14,7 +14,6 @@ import Foundation
 
 class ViewController: UIViewController{
     
-    var accessToken: FBSDKAccessToken?
     var name : String?
     var userProfileImage :UIImage?
     var stories = [String]()
@@ -27,51 +26,41 @@ class ViewController: UIViewController{
     var videos = [String]()
     var images = [String]()
     var types = [String]()
+    var status = [String]()
     
     @IBOutlet weak var btnFacebook: FBSDKLoginButton!
     @IBOutlet weak var ivUserProfileImage: UIImageView!
     @IBOutlet weak var lblName: UILabel!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        btnFacebook.readPermissions = ["public_profile", "email", "user_friends"];
-     
-        if let _ = FBSDKAccessToken.current()
-        {
-            fetchUserProfile()
-        }
+        btnFacebook.readPermissions = ["public_profile", "email", "user_friends"]
+        fetchUserProfile()
         fetchUserStatus()
     }
     
-    func fetchUserProfile()
-    {
-        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"id, email, name, picture.width(480).height(480)"])
+    func fetchUserProfile(){
         
+        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"id, email, name, picture.width(480).height(480)"])
         graphRequest.start(completionHandler: { (connection, result, error) -> Void in
-            
-            if ((error) != nil)
-            {
+            if ((error) != nil){
                 print("Error took place: \(String(describing: error))")
             }
-            else
-            {
-          //      print("Print entire fetched result: \(String(describing: result))")
+            else{
                 if let data = result as? [String:Any] {
                     let id : NSString = data["id"] as! String as NSString
-           //     print("User ID is: \(id)")
-                if let userName = data["name"]  as? String
-                {
-                    self.lblName.text = userName
-                   self.name = userName
-                }
-                if let profilePictureObj = data["picture"]  as? NSDictionary
-                {
+                    print("User ID is: \(id)")
+                    if let userName = data["name"]  as? String{
+                        self.lblName.text = userName
+                        self.name = userName
+                    }
+                if let profilePictureObj = data["picture"]  as? NSDictionary{
                     let data = profilePictureObj.value(forKey: "data") as! NSDictionary
                     let pictureUrlString  = data.value(forKey: "url") as! String
                     let pictureUrl = NSURL(string: pictureUrlString)
                     let imageData = NSData(contentsOf: pictureUrl! as URL)
-                            if let imageData = imageData
-                            {
+                            if let imageData = imageData{
                                 self.userProfileImage = UIImage(data: imageData as Data)!
                                 self.ivUserProfileImage.image = self.userProfileImage
                                 self.ivUserProfileImage.contentMode = UIViewContentMode.scaleAspectFit
@@ -85,17 +74,17 @@ class ViewController: UIViewController{
     
     
     func fetchUserStatus() {
-      
-        //accessToken = FBSDKAccessToken.current()
+
+      //  https://graph.facebook.com/v2.10//oauth/access_token?client_id=1283177111809659&client_secret=00e6aab9e701eeeae45b218fe94f52ba&grant_type=client_credentials
+        
+        // https://graph.facebook.com/key=value&access_token=1283177111809659|00e6aab9e701eeeae45b218fe94f52ba
+       // https://graph.facebook.com/oauth/access_token?client_id=1283177111809659&client_secret=00e6aab9e701eeeae45b218fe94f52ba&grant_type=client_credentials
+       // 1283177111809659 , 00e6aab9e701eeeae45b218fe94f52ba
+      //  let url1 = URL(string: "https://graph.facebook.com/oauth/access_token?client_id=" + ConfigurationManager.AppSettings["FacebookAppId"] + "&client_secret=" + ConfigurationManager.AppSettings["FacebookAppSecret"] &grant_type=client_credentials
+       
         let sessionConfig: URLSessionConfiguration = URLSessionConfiguration.default
         let session: URLSession  = URLSession.init(configuration: sessionConfig)
-
-         let acessToken = String(format:"%@", FBSDKAccessToken.current().tokenString) as String
-       //  print("ACESSS TOKEN     :", (acessToken))
-       
-        let url = URL(string: "https://graph.facebook.com/v2.10/me/posts?fields=story,caption,name,description,created_time,permalink_url,parent_id,with_tags,from,message,icon,link,message_tags,picture,privacy,shares,type,id,place,source&access_token=EAACEdEose0cBAPq7GZBlreJOVHvTZAKkkQbMdwMBZB8lh9dlQAJAtChSJPfVgNkaqgNGpYZAri7szCP0ZBoDaa4L137dPFInsYAzRTTszmSdYsJrFanRF3MSinEhFzKF61ZADAZC3tjv8LTYyjpPZCHwpm9O4XlIenOScdtbgJmmR7GDiSeVeXkHElbclQZBjBmQZD")!
-        
-      //    Uri targetUri = new Uri("https://graph.facebook.com/oauth/access_token?client_id=" + ConfigurationManager.AppSettings["FacebookAppId"] + "&client_secret=" + ConfigurationManager.AppSettings["FacebookAppSecret"] + "&redirect_uri=http://" + Request.ServerVariables["SERVER_NAME"] + ":" + Request.ServerVariables["SERVER_PORT"] + "/account/user.aspx&code=" + code);
+        let url = URL(string: "https://graph.facebook.com/v2.10/me/posts?fields=story,caption,name,description,created_time,permalink_url,parent_id,with_tags,from,message,icon,link,message_tags,picture,privacy,shares,type,id,place,source&access_token=EAACEdEose0cBAGKjhlJwPS1JZAOrpvRHRbg4ZCKIcW5BTW00Fb3DsZAQvHcgII1GQDdA4HmPew2MVzpau2siQSg1K5balz2gOZApWwjsFdPKEZCfDtCUhb0ITXlOX0ShGAZBVZCWiRL040N2QKeKyLeSXxnd5C6qTf3gwWlDZAr1kIjp4rCKL5yyropi0cBLtZAAZD")!
         
         let task: URLSessionDataTask =
             session.dataTask(with: url) { (data, response, error) in
@@ -112,52 +101,31 @@ class ViewController: UIViewController{
                                 if let createdTime = blog["created_time"] as? String{
                                     self.createdTimeList.append(createdTime)
                                 }
-
-                                if let place = blog["place"] as?  [[String: Any]] {
-                                    for places in place{
-                                        if let location = places["location"] as? [[String: Any]] {
-                                            for loc in location{
-                                                if let city = loc["city"] as? String{
-                                                  print("CITY   ",(city))
-                                                    self.locations.append(city)
-                                                   print(self.locations)
-                                                }
-                                                if let country = loc["country"] as? String{
-                                               print("COUNTRY  ",(country))
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
                                 
                                 if let type = blog["type"] as? String{
-                                   // print("BLOG",type)
                                     
-                                    if "photo" == type {
-                                    //    print(blog["picture"]!)
-                                        if let photoblogs = blog["picture"] as? String{
+                                   switch(type) {
+                                       case "photo" :
+                                            if let photoblogs = blog["picture"] as? String{
                                             self.images.append(photoblogs)
-                                            
-                                    }
-                                    }
-                                    
-                                    else if "video" == type{
-                                        if let videoblogs = blog["source"] as? String{
+                                            }
+                                       case "video":
+                                            if let videoblogs = blog["source"] as? String{
                                             self.videos.append(videoblogs)
-                                         
-                                        }
-                                    }
-                                    else if "link" == type{
-
-                                        if let linkblogs = blog["name"] as? String{
+                                            }
+                                       case "link":
+                                            if let linkblogs = blog["name"] as? String{
                                             self.links.append(linkblogs)
-                                            
-                                        }
-                                    }
-                                    
+                                            }
+                                       case "status":
+                                            if let statusblogs = blog["story"] as? String{
+                                            self.status.append(statusblogs)
+                                            }
+                                       default:
+                                            break
+                                }
                                     self.types.append(type)
                                     print(self.types)
-                           
                                 }
 
                             }
@@ -201,6 +169,8 @@ class ViewController: UIViewController{
             postStatusController.videoDetails = videos
             postStatusController.linkDetails = links
             postStatusController.typeDetails = types
+            postStatusController.statusDetails = status
+            
             }
         }
     }
