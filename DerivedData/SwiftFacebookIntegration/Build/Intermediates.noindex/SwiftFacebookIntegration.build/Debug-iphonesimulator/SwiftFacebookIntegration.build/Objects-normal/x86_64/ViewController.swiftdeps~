@@ -23,7 +23,6 @@ depends-top-level:
 - !private "Data"
 - !private "Dictionary"
 - "ExtendedGraphemeClusterType"
-- "FBSDKAccessToken"
 - !private "FBSDKGraphRequest"
 - "FBSDKLoginButton"
 - !private "JSONSerialization"
@@ -48,6 +47,7 @@ depends-top-level:
 - "ViewController"
 - !private "Void"
 - !private "print"
+- !private "~="
 depends-member:
 - !private ["Sa", "append"]
 - !private ["Sa", "count"]
@@ -104,12 +104,16 @@ depends-member:
 - !private ["s7CVarArgP", "locations"]
 - !private ["s7CVarArgP", "name"]
 - !private ["s7CVarArgP", "nameFromFb"]
+- !private ["s7CVarArgP", "photoStories"]
+- !private ["s7CVarArgP", "photoStoryDetails"]
 - !private ["s7CVarArgP", "print"]
 - !private ["s7CVarArgP", "profileImage"]
 - !private ["s7CVarArgP", "readPermissions"]
 - !private ["s7CVarArgP", "resume"]
 - !private ["s7CVarArgP", "start"]
 - !private ["s7CVarArgP", "startIndex"]
+- !private ["s7CVarArgP", "status"]
+- !private ["s7CVarArgP", "statusDetails"]
 - !private ["s7CVarArgP", "stories"]
 - !private ["s7CVarArgP", "storyDetails"]
 - !private ["s7CVarArgP", "subscript"]
@@ -121,6 +125,8 @@ depends-member:
 - !private ["s7CVarArgP", "userProfileImage"]
 - !private ["s7CVarArgP", "value"]
 - !private ["s7CVarArgP", "videoDetails"]
+- !private ["s7CVarArgP", "videoStories"]
+- !private ["s7CVarArgP", "videoStoryDetails"]
 - !private ["s7CVarArgP", "videos"]
 - !private ["s7CVarArgP", "viewDidLoad"]
 - ["s7CVarArgP", ""]
@@ -176,12 +182,16 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "locations"]
 - !private ["s28CustomDebugStringConvertibleP", "name"]
 - !private ["s28CustomDebugStringConvertibleP", "nameFromFb"]
+- !private ["s28CustomDebugStringConvertibleP", "photoStories"]
+- !private ["s28CustomDebugStringConvertibleP", "photoStoryDetails"]
 - !private ["s28CustomDebugStringConvertibleP", "print"]
 - !private ["s28CustomDebugStringConvertibleP", "profileImage"]
 - !private ["s28CustomDebugStringConvertibleP", "readPermissions"]
 - !private ["s28CustomDebugStringConvertibleP", "resume"]
 - !private ["s28CustomDebugStringConvertibleP", "start"]
 - !private ["s28CustomDebugStringConvertibleP", "startIndex"]
+- !private ["s28CustomDebugStringConvertibleP", "status"]
+- !private ["s28CustomDebugStringConvertibleP", "statusDetails"]
 - !private ["s28CustomDebugStringConvertibleP", "stories"]
 - !private ["s28CustomDebugStringConvertibleP", "storyDetails"]
 - !private ["s28CustomDebugStringConvertibleP", "subscript"]
@@ -193,6 +203,8 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "userProfileImage"]
 - !private ["s28CustomDebugStringConvertibleP", "value"]
 - !private ["s28CustomDebugStringConvertibleP", "videoDetails"]
+- !private ["s28CustomDebugStringConvertibleP", "videoStories"]
+- !private ["s28CustomDebugStringConvertibleP", "videoStoryDetails"]
 - !private ["s28CustomDebugStringConvertibleP", "videos"]
 - !private ["s28CustomDebugStringConvertibleP", "viewDidLoad"]
 - ["s28CustomDebugStringConvertibleP", ""]
@@ -251,12 +263,16 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "locations"]
 - !private ["s23CustomStringConvertibleP", "name"]
 - !private ["s23CustomStringConvertibleP", "nameFromFb"]
+- !private ["s23CustomStringConvertibleP", "photoStories"]
+- !private ["s23CustomStringConvertibleP", "photoStoryDetails"]
 - !private ["s23CustomStringConvertibleP", "print"]
 - !private ["s23CustomStringConvertibleP", "profileImage"]
 - !private ["s23CustomStringConvertibleP", "readPermissions"]
 - !private ["s23CustomStringConvertibleP", "resume"]
 - !private ["s23CustomStringConvertibleP", "start"]
 - !private ["s23CustomStringConvertibleP", "startIndex"]
+- !private ["s23CustomStringConvertibleP", "status"]
+- !private ["s23CustomStringConvertibleP", "statusDetails"]
 - !private ["s23CustomStringConvertibleP", "stories"]
 - !private ["s23CustomStringConvertibleP", "storyDetails"]
 - !private ["s23CustomStringConvertibleP", "subscript"]
@@ -268,6 +284,8 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "userProfileImage"]
 - !private ["s23CustomStringConvertibleP", "value"]
 - !private ["s23CustomStringConvertibleP", "videoDetails"]
+- !private ["s23CustomStringConvertibleP", "videoStories"]
+- !private ["s23CustomStringConvertibleP", "videoStoryDetails"]
 - !private ["s23CustomStringConvertibleP", "videos"]
 - !private ["s23CustomStringConvertibleP", "viewDidLoad"]
 - ["s23CustomStringConvertibleP", ""]
@@ -326,6 +344,8 @@ depends-member:
 - !private ["s9EquatableP", "locations"]
 - !private ["s9EquatableP", "name"]
 - !private ["s9EquatableP", "nameFromFb"]
+- !private ["s9EquatableP", "photoStories"]
+- !private ["s9EquatableP", "photoStoryDetails"]
 - !private ["s9EquatableP", "print"]
 - !private ["s9EquatableP", "profileImage"]
 - !private ["s9EquatableP", "readPermissions"]
@@ -333,6 +353,8 @@ depends-member:
 - !private ["s9EquatableP", "scaleAspectFit"]
 - !private ["s9EquatableP", "start"]
 - !private ["s9EquatableP", "startIndex"]
+- !private ["s9EquatableP", "status"]
+- !private ["s9EquatableP", "statusDetails"]
 - !private ["s9EquatableP", "stories"]
 - !private ["s9EquatableP", "storyDetails"]
 - !private ["s9EquatableP", "subscript"]
@@ -344,6 +366,8 @@ depends-member:
 - !private ["s9EquatableP", "userProfileImage"]
 - !private ["s9EquatableP", "value"]
 - !private ["s9EquatableP", "videoDetails"]
+- !private ["s9EquatableP", "videoStories"]
+- !private ["s9EquatableP", "videoStoryDetails"]
 - !private ["s9EquatableP", "videos"]
 - !private ["s9EquatableP", "viewDidLoad"]
 - ["s9EquatableP", ""]
@@ -411,6 +435,8 @@ depends-member:
 - !private ["s8HashableP", "locations"]
 - !private ["s8HashableP", "name"]
 - !private ["s8HashableP", "nameFromFb"]
+- !private ["s8HashableP", "photoStories"]
+- !private ["s8HashableP", "photoStoryDetails"]
 - !private ["s8HashableP", "print"]
 - !private ["s8HashableP", "profileImage"]
 - !private ["s8HashableP", "readPermissions"]
@@ -418,6 +444,8 @@ depends-member:
 - !private ["s8HashableP", "scaleAspectFit"]
 - !private ["s8HashableP", "start"]
 - !private ["s8HashableP", "startIndex"]
+- !private ["s8HashableP", "status"]
+- !private ["s8HashableP", "statusDetails"]
 - !private ["s8HashableP", "stories"]
 - !private ["s8HashableP", "storyDetails"]
 - !private ["s8HashableP", "subscript"]
@@ -429,6 +457,8 @@ depends-member:
 - !private ["s8HashableP", "userProfileImage"]
 - !private ["s8HashableP", "value"]
 - !private ["s8HashableP", "videoDetails"]
+- !private ["s8HashableP", "videoStories"]
+- !private ["s8HashableP", "videoStoryDetails"]
 - !private ["s8HashableP", "videos"]
 - !private ["s8HashableP", "viewDidLoad"]
 - ["s8HashableP", ""]
@@ -480,10 +510,14 @@ depends-member:
 - !private ["So8NSCodingP", "locations"]
 - !private ["So8NSCodingP", "name"]
 - !private ["So8NSCodingP", "nameFromFb"]
+- !private ["So8NSCodingP", "photoStories"]
+- !private ["So8NSCodingP", "photoStoryDetails"]
 - !private ["So8NSCodingP", "print"]
 - !private ["So8NSCodingP", "profileImage"]
 - !private ["So8NSCodingP", "readPermissions"]
 - !private ["So8NSCodingP", "startIndex"]
+- !private ["So8NSCodingP", "status"]
+- !private ["So8NSCodingP", "statusDetails"]
 - !private ["So8NSCodingP", "stories"]
 - !private ["So8NSCodingP", "storyDetails"]
 - !private ["So8NSCodingP", "subscript"]
@@ -495,6 +529,8 @@ depends-member:
 - !private ["So8NSCodingP", "userProfileImage"]
 - !private ["So8NSCodingP", "value"]
 - !private ["So8NSCodingP", "videoDetails"]
+- !private ["So8NSCodingP", "videoStories"]
+- !private ["So8NSCodingP", "videoStoryDetails"]
 - !private ["So8NSCodingP", "videos"]
 - !private ["So8NSCodingP", "viewDidLoad"]
 - ["So8NSCodingP", ""]
@@ -536,8 +572,12 @@ depends-member:
 - !private ["So26NSExtensionRequestHandlingP", "locations"]
 - !private ["So26NSExtensionRequestHandlingP", "name"]
 - !private ["So26NSExtensionRequestHandlingP", "nameFromFb"]
+- !private ["So26NSExtensionRequestHandlingP", "photoStories"]
+- !private ["So26NSExtensionRequestHandlingP", "photoStoryDetails"]
 - !private ["So26NSExtensionRequestHandlingP", "print"]
 - !private ["So26NSExtensionRequestHandlingP", "profileImage"]
+- !private ["So26NSExtensionRequestHandlingP", "status"]
+- !private ["So26NSExtensionRequestHandlingP", "statusDetails"]
 - !private ["So26NSExtensionRequestHandlingP", "stories"]
 - !private ["So26NSExtensionRequestHandlingP", "storyDetails"]
 - !private ["So26NSExtensionRequestHandlingP", "timeDetails"]
@@ -546,6 +586,8 @@ depends-member:
 - !private ["So26NSExtensionRequestHandlingP", "types"]
 - !private ["So26NSExtensionRequestHandlingP", "userProfileImage"]
 - !private ["So26NSExtensionRequestHandlingP", "videoDetails"]
+- !private ["So26NSExtensionRequestHandlingP", "videoStories"]
+- !private ["So26NSExtensionRequestHandlingP", "videoStoryDetails"]
 - !private ["So26NSExtensionRequestHandlingP", "videos"]
 - !private ["So26NSExtensionRequestHandlingP", "viewDidLoad"]
 - ["So26NSExtensionRequestHandlingP", ""]
@@ -568,7 +610,6 @@ depends-member:
 - !private ["So16NSMutableCopyingP", "subscript"]
 - !private ["So16NSMutableCopyingP", "value"]
 - !private ["So8NSObjectC", "Data"]
-- ["So8NSObjectC", "FBSDKAccessToken"]
 - !private ["So8NSObjectC", "FBSDKGraphRequest"]
 - ["So8NSObjectC", "FBSDKLoginButton"]
 - !private ["So8NSObjectC", "JSONSerialization"]
@@ -588,7 +629,6 @@ depends-member:
 - !private ["So8NSObjectC", "URLSessionConfiguration"]
 - !private ["So8NSObjectC", "URLSessionDataTask"]
 - !private ["So8NSObjectC", "Void"]
-- ["So8NSObjectC", "accessToken"]
 - ["So8NSObjectC", "btnFacebook"]
 - !private ["So8NSObjectC", "contentMode"]
 - ["So8NSObjectC", "createdTimeList"]
@@ -616,6 +656,8 @@ depends-member:
 - ["So8NSObjectC", "locations"]
 - ["So8NSObjectC", "name"]
 - !private ["So8NSObjectC", "nameFromFb"]
+- ["So8NSObjectC", "photoStories"]
+- !private ["So8NSObjectC", "photoStoryDetails"]
 - ["So8NSObjectC", "prepare"]
 - !private ["So8NSObjectC", "print"]
 - !private ["So8NSObjectC", "profileImage"]
@@ -624,6 +666,8 @@ depends-member:
 - ["So8NSObjectC", "sources"]
 - !private ["So8NSObjectC", "start"]
 - !private ["So8NSObjectC", "startIndex"]
+- ["So8NSObjectC", "status"]
+- !private ["So8NSObjectC", "statusDetails"]
 - ["So8NSObjectC", "stories"]
 - !private ["So8NSObjectC", "storyDetails"]
 - !private ["So8NSObjectC", "subscript"]
@@ -635,6 +679,8 @@ depends-member:
 - ["So8NSObjectC", "userProfileImage"]
 - !private ["So8NSObjectC", "value"]
 - !private ["So8NSObjectC", "videoDetails"]
+- ["So8NSObjectC", "videoStories"]
+- !private ["So8NSObjectC", "videoStoryDetails"]
 - ["So8NSObjectC", "videos"]
 - ["So8NSObjectC", "viewDidLoad"]
 - !private ["So16NSObjectProtocolP", "FBSDKGraphRequest"]
@@ -674,12 +720,16 @@ depends-member:
 - !private ["So16NSObjectProtocolP", "locations"]
 - !private ["So16NSObjectProtocolP", "name"]
 - !private ["So16NSObjectProtocolP", "nameFromFb"]
+- !private ["So16NSObjectProtocolP", "photoStories"]
+- !private ["So16NSObjectProtocolP", "photoStoryDetails"]
 - !private ["So16NSObjectProtocolP", "print"]
 - !private ["So16NSObjectProtocolP", "profileImage"]
 - !private ["So16NSObjectProtocolP", "readPermissions"]
 - !private ["So16NSObjectProtocolP", "resume"]
 - !private ["So16NSObjectProtocolP", "start"]
 - !private ["So16NSObjectProtocolP", "startIndex"]
+- !private ["So16NSObjectProtocolP", "status"]
+- !private ["So16NSObjectProtocolP", "statusDetails"]
 - !private ["So16NSObjectProtocolP", "stories"]
 - !private ["So16NSObjectProtocolP", "storyDetails"]
 - !private ["So16NSObjectProtocolP", "subscript"]
@@ -691,6 +741,8 @@ depends-member:
 - !private ["So16NSObjectProtocolP", "userProfileImage"]
 - !private ["So16NSObjectProtocolP", "value"]
 - !private ["So16NSObjectProtocolP", "videoDetails"]
+- !private ["So16NSObjectProtocolP", "videoStories"]
+- !private ["So16NSObjectProtocolP", "videoStoryDetails"]
 - !private ["So16NSObjectProtocolP", "videos"]
 - !private ["So16NSObjectProtocolP", "viewDidLoad"]
 - ["So16NSObjectProtocolP", ""]
@@ -711,11 +763,14 @@ depends-member:
 - !private ["24SwiftFacebookIntegration29PostStatusTableViewControllerC", "linkDetails"]
 - !private ["24SwiftFacebookIntegration29PostStatusTableViewControllerC", "locationDetails"]
 - !private ["24SwiftFacebookIntegration29PostStatusTableViewControllerC", "nameFromFb"]
+- !private ["24SwiftFacebookIntegration29PostStatusTableViewControllerC", "photoStoryDetails"]
 - !private ["24SwiftFacebookIntegration29PostStatusTableViewControllerC", "profileImage"]
+- !private ["24SwiftFacebookIntegration29PostStatusTableViewControllerC", "statusDetails"]
 - !private ["24SwiftFacebookIntegration29PostStatusTableViewControllerC", "storyDetails"]
 - !private ["24SwiftFacebookIntegration29PostStatusTableViewControllerC", "timeDetails"]
 - !private ["24SwiftFacebookIntegration29PostStatusTableViewControllerC", "typeDetails"]
 - !private ["24SwiftFacebookIntegration29PostStatusTableViewControllerC", "videoDetails"]
+- !private ["24SwiftFacebookIntegration29PostStatusTableViewControllerC", "videoStoryDetails"]
 - !private ["So17ProgressReportingP", "resume"]
 - !private ["s22RandomAccessCollectionP", "append"]
 - !private ["s22RandomAccessCollectionP", "count"]
@@ -800,9 +855,13 @@ depends-member:
 - !private ["So21UIAppearanceContainerP", "locations"]
 - !private ["So21UIAppearanceContainerP", "name"]
 - !private ["So21UIAppearanceContainerP", "nameFromFb"]
+- !private ["So21UIAppearanceContainerP", "photoStories"]
+- !private ["So21UIAppearanceContainerP", "photoStoryDetails"]
 - !private ["So21UIAppearanceContainerP", "print"]
 - !private ["So21UIAppearanceContainerP", "profileImage"]
 - !private ["So21UIAppearanceContainerP", "readPermissions"]
+- !private ["So21UIAppearanceContainerP", "status"]
+- !private ["So21UIAppearanceContainerP", "statusDetails"]
 - !private ["So21UIAppearanceContainerP", "stories"]
 - !private ["So21UIAppearanceContainerP", "storyDetails"]
 - !private ["So21UIAppearanceContainerP", "text"]
@@ -812,6 +871,8 @@ depends-member:
 - !private ["So21UIAppearanceContainerP", "types"]
 - !private ["So21UIAppearanceContainerP", "userProfileImage"]
 - !private ["So21UIAppearanceContainerP", "videoDetails"]
+- !private ["So21UIAppearanceContainerP", "videoStories"]
+- !private ["So21UIAppearanceContainerP", "videoStoryDetails"]
 - !private ["So21UIAppearanceContainerP", "videos"]
 - !private ["So21UIAppearanceContainerP", "viewDidLoad"]
 - ["So21UIAppearanceContainerP", ""]
@@ -844,8 +905,12 @@ depends-member:
 - !private ["So18UIContentContainerP", "locations"]
 - !private ["So18UIContentContainerP", "name"]
 - !private ["So18UIContentContainerP", "nameFromFb"]
+- !private ["So18UIContentContainerP", "photoStories"]
+- !private ["So18UIContentContainerP", "photoStoryDetails"]
 - !private ["So18UIContentContainerP", "print"]
 - !private ["So18UIContentContainerP", "profileImage"]
+- !private ["So18UIContentContainerP", "status"]
+- !private ["So18UIContentContainerP", "statusDetails"]
 - !private ["So18UIContentContainerP", "stories"]
 - !private ["So18UIContentContainerP", "storyDetails"]
 - !private ["So18UIContentContainerP", "timeDetails"]
@@ -854,6 +919,8 @@ depends-member:
 - !private ["So18UIContentContainerP", "types"]
 - !private ["So18UIContentContainerP", "userProfileImage"]
 - !private ["So18UIContentContainerP", "videoDetails"]
+- !private ["So18UIContentContainerP", "videoStories"]
+- !private ["So18UIContentContainerP", "videoStoryDetails"]
 - !private ["So18UIContentContainerP", "videos"]
 - !private ["So18UIContentContainerP", "viewDidLoad"]
 - ["So18UIContentContainerP", ""]
@@ -897,9 +964,13 @@ depends-member:
 - !private ["So18UIFocusEnvironmentP", "locations"]
 - !private ["So18UIFocusEnvironmentP", "name"]
 - !private ["So18UIFocusEnvironmentP", "nameFromFb"]
+- !private ["So18UIFocusEnvironmentP", "photoStories"]
+- !private ["So18UIFocusEnvironmentP", "photoStoryDetails"]
 - !private ["So18UIFocusEnvironmentP", "print"]
 - !private ["So18UIFocusEnvironmentP", "profileImage"]
 - !private ["So18UIFocusEnvironmentP", "readPermissions"]
+- !private ["So18UIFocusEnvironmentP", "status"]
+- !private ["So18UIFocusEnvironmentP", "statusDetails"]
 - !private ["So18UIFocusEnvironmentP", "stories"]
 - !private ["So18UIFocusEnvironmentP", "storyDetails"]
 - !private ["So18UIFocusEnvironmentP", "text"]
@@ -909,6 +980,8 @@ depends-member:
 - !private ["So18UIFocusEnvironmentP", "types"]
 - !private ["So18UIFocusEnvironmentP", "userProfileImage"]
 - !private ["So18UIFocusEnvironmentP", "videoDetails"]
+- !private ["So18UIFocusEnvironmentP", "videoStories"]
+- !private ["So18UIFocusEnvironmentP", "videoStoryDetails"]
 - !private ["So18UIFocusEnvironmentP", "videos"]
 - !private ["So18UIFocusEnvironmentP", "viewDidLoad"]
 - ["So18UIFocusEnvironmentP", ""]
@@ -951,9 +1024,13 @@ depends-member:
 - !private ["So30UIPasteConfigurationSupportingP", "locations"]
 - !private ["So30UIPasteConfigurationSupportingP", "name"]
 - !private ["So30UIPasteConfigurationSupportingP", "nameFromFb"]
+- !private ["So30UIPasteConfigurationSupportingP", "photoStories"]
+- !private ["So30UIPasteConfigurationSupportingP", "photoStoryDetails"]
 - !private ["So30UIPasteConfigurationSupportingP", "print"]
 - !private ["So30UIPasteConfigurationSupportingP", "profileImage"]
 - !private ["So30UIPasteConfigurationSupportingP", "readPermissions"]
+- !private ["So30UIPasteConfigurationSupportingP", "status"]
+- !private ["So30UIPasteConfigurationSupportingP", "statusDetails"]
 - !private ["So30UIPasteConfigurationSupportingP", "stories"]
 - !private ["So30UIPasteConfigurationSupportingP", "storyDetails"]
 - !private ["So30UIPasteConfigurationSupportingP", "text"]
@@ -963,11 +1040,12 @@ depends-member:
 - !private ["So30UIPasteConfigurationSupportingP", "types"]
 - !private ["So30UIPasteConfigurationSupportingP", "userProfileImage"]
 - !private ["So30UIPasteConfigurationSupportingP", "videoDetails"]
+- !private ["So30UIPasteConfigurationSupportingP", "videoStories"]
+- !private ["So30UIPasteConfigurationSupportingP", "videoStoryDetails"]
 - !private ["So30UIPasteConfigurationSupportingP", "videos"]
 - !private ["So30UIPasteConfigurationSupportingP", "viewDidLoad"]
 - ["So30UIPasteConfigurationSupportingP", ""]
 - !private ["So11UIResponderC", "Data"]
-- ["So11UIResponderC", "FBSDKAccessToken"]
 - !private ["So11UIResponderC", "FBSDKGraphRequest"]
 - ["So11UIResponderC", "FBSDKLoginButton"]
 - !private ["So11UIResponderC", "JSONSerialization"]
@@ -987,7 +1065,6 @@ depends-member:
 - !private ["So11UIResponderC", "URLSessionConfiguration"]
 - !private ["So11UIResponderC", "URLSessionDataTask"]
 - !private ["So11UIResponderC", "Void"]
-- ["So11UIResponderC", "accessToken"]
 - ["So11UIResponderC", "btnFacebook"]
 - !private ["So11UIResponderC", "contentMode"]
 - ["So11UIResponderC", "createdTimeList"]
@@ -1008,11 +1085,15 @@ depends-member:
 - ["So11UIResponderC", "locations"]
 - ["So11UIResponderC", "name"]
 - !private ["So11UIResponderC", "nameFromFb"]
+- ["So11UIResponderC", "photoStories"]
+- !private ["So11UIResponderC", "photoStoryDetails"]
 - ["So11UIResponderC", "prepare"]
 - !private ["So11UIResponderC", "print"]
 - !private ["So11UIResponderC", "profileImage"]
 - !private ["So11UIResponderC", "readPermissions"]
 - ["So11UIResponderC", "sources"]
+- ["So11UIResponderC", "status"]
+- !private ["So11UIResponderC", "statusDetails"]
 - ["So11UIResponderC", "stories"]
 - !private ["So11UIResponderC", "storyDetails"]
 - !private ["So11UIResponderC", "text"]
@@ -1022,6 +1103,8 @@ depends-member:
 - ["So11UIResponderC", "types"]
 - ["So11UIResponderC", "userProfileImage"]
 - !private ["So11UIResponderC", "videoDetails"]
+- ["So11UIResponderC", "videoStories"]
+- !private ["So11UIResponderC", "videoStoryDetails"]
 - ["So11UIResponderC", "videos"]
 - ["So11UIResponderC", "viewDidLoad"]
 - !private ["So30UIResponderStandardEditActionsP", "FBSDKGraphRequest"]
@@ -1054,9 +1137,13 @@ depends-member:
 - !private ["So30UIResponderStandardEditActionsP", "locations"]
 - !private ["So30UIResponderStandardEditActionsP", "name"]
 - !private ["So30UIResponderStandardEditActionsP", "nameFromFb"]
+- !private ["So30UIResponderStandardEditActionsP", "photoStories"]
+- !private ["So30UIResponderStandardEditActionsP", "photoStoryDetails"]
 - !private ["So30UIResponderStandardEditActionsP", "print"]
 - !private ["So30UIResponderStandardEditActionsP", "profileImage"]
 - !private ["So30UIResponderStandardEditActionsP", "readPermissions"]
+- !private ["So30UIResponderStandardEditActionsP", "status"]
+- !private ["So30UIResponderStandardEditActionsP", "statusDetails"]
 - !private ["So30UIResponderStandardEditActionsP", "stories"]
 - !private ["So30UIResponderStandardEditActionsP", "storyDetails"]
 - !private ["So30UIResponderStandardEditActionsP", "text"]
@@ -1066,6 +1153,8 @@ depends-member:
 - !private ["So30UIResponderStandardEditActionsP", "types"]
 - !private ["So30UIResponderStandardEditActionsP", "userProfileImage"]
 - !private ["So30UIResponderStandardEditActionsP", "videoDetails"]
+- !private ["So30UIResponderStandardEditActionsP", "videoStories"]
+- !private ["So30UIResponderStandardEditActionsP", "videoStoryDetails"]
 - !private ["So30UIResponderStandardEditActionsP", "videos"]
 - !private ["So30UIResponderStandardEditActionsP", "viewDidLoad"]
 - ["So30UIResponderStandardEditActionsP", ""]
@@ -1074,11 +1163,14 @@ depends-member:
 - !private ["So20UIScrollViewDelegateP", "linkDetails"]
 - !private ["So20UIScrollViewDelegateP", "locationDetails"]
 - !private ["So20UIScrollViewDelegateP", "nameFromFb"]
+- !private ["So20UIScrollViewDelegateP", "photoStoryDetails"]
 - !private ["So20UIScrollViewDelegateP", "profileImage"]
+- !private ["So20UIScrollViewDelegateP", "statusDetails"]
 - !private ["So20UIScrollViewDelegateP", "storyDetails"]
 - !private ["So20UIScrollViewDelegateP", "timeDetails"]
 - !private ["So20UIScrollViewDelegateP", "typeDetails"]
 - !private ["So20UIScrollViewDelegateP", "videoDetails"]
+- !private ["So20UIScrollViewDelegateP", "videoStoryDetails"]
 - !private ["So35UISpringLoadedInteractionSupportingP", "readPermissions"]
 - !private ["So16UIStateRestoringP", "FBSDKGraphRequest"]
 - !private ["So16UIStateRestoringP", "JSONSerialization"]
@@ -1108,8 +1200,12 @@ depends-member:
 - !private ["So16UIStateRestoringP", "locations"]
 - !private ["So16UIStateRestoringP", "name"]
 - !private ["So16UIStateRestoringP", "nameFromFb"]
+- !private ["So16UIStateRestoringP", "photoStories"]
+- !private ["So16UIStateRestoringP", "photoStoryDetails"]
 - !private ["So16UIStateRestoringP", "print"]
 - !private ["So16UIStateRestoringP", "profileImage"]
+- !private ["So16UIStateRestoringP", "status"]
+- !private ["So16UIStateRestoringP", "statusDetails"]
 - !private ["So16UIStateRestoringP", "stories"]
 - !private ["So16UIStateRestoringP", "storyDetails"]
 - !private ["So16UIStateRestoringP", "timeDetails"]
@@ -1118,6 +1214,8 @@ depends-member:
 - !private ["So16UIStateRestoringP", "types"]
 - !private ["So16UIStateRestoringP", "userProfileImage"]
 - !private ["So16UIStateRestoringP", "videoDetails"]
+- !private ["So16UIStateRestoringP", "videoStories"]
+- !private ["So16UIStateRestoringP", "videoStoryDetails"]
 - !private ["So16UIStateRestoringP", "videos"]
 - !private ["So16UIStateRestoringP", "viewDidLoad"]
 - ["So16UIStateRestoringP", ""]
@@ -1128,31 +1226,40 @@ depends-member:
 - !private ["So21UITableViewControllerC", "linkDetails"]
 - !private ["So21UITableViewControllerC", "locationDetails"]
 - !private ["So21UITableViewControllerC", "nameFromFb"]
+- !private ["So21UITableViewControllerC", "photoStoryDetails"]
 - !private ["So21UITableViewControllerC", "profileImage"]
+- !private ["So21UITableViewControllerC", "statusDetails"]
 - !private ["So21UITableViewControllerC", "storyDetails"]
 - !private ["So21UITableViewControllerC", "timeDetails"]
 - !private ["So21UITableViewControllerC", "typeDetails"]
 - !private ["So21UITableViewControllerC", "videoDetails"]
+- !private ["So21UITableViewControllerC", "videoStoryDetails"]
 - !private ["So21UITableViewDataSourceP", "dateDetails"]
 - !private ["So21UITableViewDataSourceP", "imageDetails"]
 - !private ["So21UITableViewDataSourceP", "linkDetails"]
 - !private ["So21UITableViewDataSourceP", "locationDetails"]
 - !private ["So21UITableViewDataSourceP", "nameFromFb"]
+- !private ["So21UITableViewDataSourceP", "photoStoryDetails"]
 - !private ["So21UITableViewDataSourceP", "profileImage"]
+- !private ["So21UITableViewDataSourceP", "statusDetails"]
 - !private ["So21UITableViewDataSourceP", "storyDetails"]
 - !private ["So21UITableViewDataSourceP", "timeDetails"]
 - !private ["So21UITableViewDataSourceP", "typeDetails"]
 - !private ["So21UITableViewDataSourceP", "videoDetails"]
+- !private ["So21UITableViewDataSourceP", "videoStoryDetails"]
 - !private ["So19UITableViewDelegateP", "dateDetails"]
 - !private ["So19UITableViewDelegateP", "imageDetails"]
 - !private ["So19UITableViewDelegateP", "linkDetails"]
 - !private ["So19UITableViewDelegateP", "locationDetails"]
 - !private ["So19UITableViewDelegateP", "nameFromFb"]
+- !private ["So19UITableViewDelegateP", "photoStoryDetails"]
 - !private ["So19UITableViewDelegateP", "profileImage"]
+- !private ["So19UITableViewDelegateP", "statusDetails"]
 - !private ["So19UITableViewDelegateP", "storyDetails"]
 - !private ["So19UITableViewDelegateP", "timeDetails"]
 - !private ["So19UITableViewDelegateP", "typeDetails"]
 - !private ["So19UITableViewDelegateP", "videoDetails"]
+- !private ["So19UITableViewDelegateP", "videoStoryDetails"]
 - !private ["So18UITraitEnvironmentP", "FBSDKGraphRequest"]
 - !private ["So18UITraitEnvironmentP", "JSONSerialization"]
 - !private ["So18UITraitEnvironmentP", "NSData"]
@@ -1183,9 +1290,13 @@ depends-member:
 - !private ["So18UITraitEnvironmentP", "locations"]
 - !private ["So18UITraitEnvironmentP", "name"]
 - !private ["So18UITraitEnvironmentP", "nameFromFb"]
+- !private ["So18UITraitEnvironmentP", "photoStories"]
+- !private ["So18UITraitEnvironmentP", "photoStoryDetails"]
 - !private ["So18UITraitEnvironmentP", "print"]
 - !private ["So18UITraitEnvironmentP", "profileImage"]
 - !private ["So18UITraitEnvironmentP", "readPermissions"]
+- !private ["So18UITraitEnvironmentP", "status"]
+- !private ["So18UITraitEnvironmentP", "statusDetails"]
 - !private ["So18UITraitEnvironmentP", "stories"]
 - !private ["So18UITraitEnvironmentP", "storyDetails"]
 - !private ["So18UITraitEnvironmentP", "text"]
@@ -1195,6 +1306,8 @@ depends-member:
 - !private ["So18UITraitEnvironmentP", "types"]
 - !private ["So18UITraitEnvironmentP", "userProfileImage"]
 - !private ["So18UITraitEnvironmentP", "videoDetails"]
+- !private ["So18UITraitEnvironmentP", "videoStories"]
+- !private ["So18UITraitEnvironmentP", "videoStoryDetails"]
 - !private ["So18UITraitEnvironmentP", "videos"]
 - !private ["So18UITraitEnvironmentP", "viewDidLoad"]
 - ["So18UITraitEnvironmentP", ""]
@@ -1204,7 +1317,6 @@ depends-member:
 - !private ["So6UIViewC", "text"]
 - !private ["SC17UIViewContentModeO", "scaleAspectFit"]
 - !private ["So16UIViewControllerC", "Data"]
-- ["So16UIViewControllerC", "FBSDKAccessToken"]
 - !private ["So16UIViewControllerC", "FBSDKGraphRequest"]
 - ["So16UIViewControllerC", "FBSDKLoginButton"]
 - !private ["So16UIViewControllerC", "JSONSerialization"]
@@ -1224,7 +1336,6 @@ depends-member:
 - !private ["So16UIViewControllerC", "URLSessionConfiguration"]
 - !private ["So16UIViewControllerC", "URLSessionDataTask"]
 - !private ["So16UIViewControllerC", "Void"]
-- ["So16UIViewControllerC", "accessToken"]
 - ["So16UIViewControllerC", "btnFacebook"]
 - ["So16UIViewControllerC", "createdTimeList"]
 - !private ["So16UIViewControllerC", "dateDetails"]
@@ -1243,10 +1354,14 @@ depends-member:
 - ["So16UIViewControllerC", "locations"]
 - ["So16UIViewControllerC", "name"]
 - !private ["So16UIViewControllerC", "nameFromFb"]
+- ["So16UIViewControllerC", "photoStories"]
+- !private ["So16UIViewControllerC", "photoStoryDetails"]
 - ["So16UIViewControllerC", "prepare"]
 - !private ["So16UIViewControllerC", "print"]
 - !private ["So16UIViewControllerC", "profileImage"]
 - ["So16UIViewControllerC", "sources"]
+- ["So16UIViewControllerC", "status"]
+- !private ["So16UIViewControllerC", "statusDetails"]
 - ["So16UIViewControllerC", "stories"]
 - !private ["So16UIViewControllerC", "storyDetails"]
 - !private ["So16UIViewControllerC", "timeDetails"]
@@ -1255,6 +1370,8 @@ depends-member:
 - ["So16UIViewControllerC", "types"]
 - ["So16UIViewControllerC", "userProfileImage"]
 - !private ["So16UIViewControllerC", "videoDetails"]
+- ["So16UIViewControllerC", "videoStories"]
+- !private ["So16UIViewControllerC", "videoStoryDetails"]
 - ["So16UIViewControllerC", "videos"]
 - ["So16UIViewControllerC", "viewDidLoad"]
 - ["So16UIViewControllerC", ""]
@@ -1265,7 +1382,6 @@ depends-member:
 - !private ["So18URLSessionDataTaskC", "resume"]
 - !private ["So14URLSessionTaskC", "resume"]
 - !private ["24SwiftFacebookIntegration14ViewControllerC", "Data"]
-- ["24SwiftFacebookIntegration14ViewControllerC", "FBSDKAccessToken"]
 - !private ["24SwiftFacebookIntegration14ViewControllerC", "FBSDKGraphRequest"]
 - ["24SwiftFacebookIntegration14ViewControllerC", "FBSDKLoginButton"]
 - !private ["24SwiftFacebookIntegration14ViewControllerC", "JSONSerialization"]
@@ -1285,7 +1401,6 @@ depends-member:
 - !private ["24SwiftFacebookIntegration14ViewControllerC", "URLSessionConfiguration"]
 - !private ["24SwiftFacebookIntegration14ViewControllerC", "URLSessionDataTask"]
 - !private ["24SwiftFacebookIntegration14ViewControllerC", "Void"]
-- ["24SwiftFacebookIntegration14ViewControllerC", "accessToken"]
 - ["24SwiftFacebookIntegration14ViewControllerC", "btnFacebook"]
 - ["24SwiftFacebookIntegration14ViewControllerC", "createdTimeList"]
 - ["24SwiftFacebookIntegration14ViewControllerC", "dates"]
@@ -1300,13 +1415,16 @@ depends-member:
 - ["24SwiftFacebookIntegration14ViewControllerC", "links"]
 - ["24SwiftFacebookIntegration14ViewControllerC", "locations"]
 - ["24SwiftFacebookIntegration14ViewControllerC", "name"]
+- ["24SwiftFacebookIntegration14ViewControllerC", "photoStories"]
 - ["24SwiftFacebookIntegration14ViewControllerC", "prepare"]
 - !private ["24SwiftFacebookIntegration14ViewControllerC", "print"]
 - ["24SwiftFacebookIntegration14ViewControllerC", "sources"]
+- ["24SwiftFacebookIntegration14ViewControllerC", "status"]
 - ["24SwiftFacebookIntegration14ViewControllerC", "stories"]
 - ["24SwiftFacebookIntegration14ViewControllerC", "times"]
 - ["24SwiftFacebookIntegration14ViewControllerC", "types"]
 - ["24SwiftFacebookIntegration14ViewControllerC", "userProfileImage"]
+- ["24SwiftFacebookIntegration14ViewControllerC", "videoStories"]
 - ["24SwiftFacebookIntegration14ViewControllerC", "videos"]
 - ["24SwiftFacebookIntegration14ViewControllerC", "viewDidLoad"]
 - !private ["s14_ArrayProtocolP", "append"]
@@ -1413,12 +1531,16 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "locations"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "name"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "nameFromFb"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "photoStories"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "photoStoryDetails"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "print"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "profileImage"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "readPermissions"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "resume"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "start"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "startIndex"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "status"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "statusDetails"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "stories"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "storyDetails"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "subscript"]
@@ -1430,6 +1552,8 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "userProfileImage"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "value"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "videoDetails"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "videoStories"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "videoStoryDetails"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "videos"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "viewDidLoad"]
 - ["10Foundation27_KeyValueCodingAndObservingP", ""]
@@ -1596,56 +1720,66 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
-- "/Users/shobhavj/Documents/SwiftFacebookIntegration/SwiftFacebookIntegration/Bolts.framework/Headers/BFURL.h"
-- "/Users/shobhavj/Documents/SwiftFacebookIntegration/SwiftFacebookIntegration/Bolts.framework/Headers/BFCancellationTokenSource.h"
-- "/Users/shobhavj/Documents/SwiftFacebookIntegration/SwiftFacebookIntegration/Bolts.framework/Headers/BFTaskCompletionSource.h"
-- "/Users/shobhavj/Documents/SwiftFacebookIntegration/SwiftFacebookIntegration/FBSDKCoreKit.framework/Headers/FBSDKProfile.h"
-- "/Users/shobhavj/Documents/SwiftFacebookIntegration/SwiftFacebookIntegration/FBSDKCoreKit.framework/Headers/FBSDKApplicationDelegate.h"
-- "/Users/shobhavj/Documents/SwiftFacebookIntegration/SwiftFacebookIntegration/ObjCBridg.h"
-- "/Users/shobhavj/Documents/SwiftFacebookIntegration/SwiftFacebookIntegration/Bolts.framework/Headers/BFAppLinkResolving.h"
-- "/Users/shobhavj/Documents/SwiftFacebookIntegration/SwiftFacebookIntegration/FBSDKCoreKit.framework/Headers/FBSDKCopying.h"
-- "/Users/shobhavj/Documents/SwiftFacebookIntegration/SwiftFacebookIntegration/FBSDKCoreKit.framework/Headers/FBSDKMutableCopying.h"
-- "/Users/shobhavj/Documents/SwiftFacebookIntegration/SwiftFacebookIntegration/Bolts.framework/Headers/BFAppLink.h"
-- "/Users/shobhavj/Documents/SwiftFacebookIntegration/SwiftFacebookIntegration/Bolts.framework/Headers/BFTask.h"
-- "/Users/shobhavj/Documents/SwiftFacebookIntegration/SwiftFacebookIntegration/Bolts.framework/Headers/BFCancellationToken.h"
-- "/Users/shobhavj/Documents/SwiftFacebookIntegration/SwiftFacebookIntegration/FBSDKCoreKit.framework/Headers/FBSDKAccessToken.h"
-- "/Users/shobhavj/Documents/SwiftFacebookIntegration/SwiftFacebookIntegration/Bolts.framework/Headers/BFAppLinkNavigation.h"
-- "/Users/shobhavj/Documents/SwiftFacebookIntegration/SwiftFacebookIntegration/Bolts.framework/Headers/BFCancellationTokenRegistration.h"
-- "/Users/shobhavj/Documents/SwiftFacebookIntegration/SwiftFacebookIntegration/FBSDKCoreKit.framework/Headers/FBSDKGraphRequestConnection.h"
-- "/Users/shobhavj/Documents/SwiftFacebookIntegration/SwiftFacebookIntegration/FBSDKCoreKit.framework/Headers/FBSDKButton.h"
-- "/Users/shobhavj/Documents/SwiftFacebookIntegration/SwiftFacebookIntegration/FBSDKLoginKit.framework/Headers/FBSDKLoginButton.h"
-- "/Users/shobhavj/Documents/SwiftFacebookIntegration/SwiftFacebookIntegration/FBSDKLoginKit.framework/Headers/FBSDKLoginManager.h"
-- "/Users/shobhavj/Documents/SwiftFacebookIntegration/SwiftFacebookIntegration/FBSDKCoreKit.framework/Headers/FBSDKTestUsersManager.h"
-- "/Users/shobhavj/Documents/SwiftFacebookIntegration/SwiftFacebookIntegration/Bolts.framework/Headers/BFAppLinkReturnToRefererController.h"
-- "/Users/shobhavj/Documents/SwiftFacebookIntegration/SwiftFacebookIntegration/FBSDKCoreKit.framework/Headers/FBSDKAppLinkResolver.h"
-- "/Users/shobhavj/Documents/SwiftFacebookIntegration/SwiftFacebookIntegration/Bolts.framework/Headers/BFWebViewAppLinkResolver.h"
-- "/Users/shobhavj/Documents/SwiftFacebookIntegration/SwiftFacebookIntegration/FBSDKCoreKit.framework/Headers/FBSDKGraphErrorRecoveryProcessor.h"
-- "/Users/shobhavj/Documents/SwiftFacebookIntegration/SwiftFacebookIntegration/Bolts.framework/Headers/BFExecutor.h"
-- "/Users/shobhavj/Documents/SwiftFacebookIntegration/SwiftFacebookIntegration/FBSDKCoreKit.framework/Headers/FBSDKSettings.h"
-- "/Users/shobhavj/Documents/SwiftFacebookIntegration/SwiftFacebookIntegration/Bolts.framework/Headers/BFTask+Exceptions.h"
-- "/Users/shobhavj/Documents/SwiftFacebookIntegration/SwiftFacebookIntegration/FBSDKCoreKit.framework/Headers/FBSDKMacros.h"
-- "/Users/shobhavj/Documents/SwiftFacebookIntegration/SwiftFacebookIntegration/Bolts.framework/Headers/Bolts.h"
-- "/Users/shobhavj/Documents/SwiftFacebookIntegration/SwiftFacebookIntegration/FBSDKCoreKit.framework/Headers/FBSDKConstants.h"
-- "/Users/shobhavj/Documents/SwiftFacebookIntegration/SwiftFacebookIntegration/FBSDKLoginKit.framework/Headers/FBSDKLoginConstants.h"
-- "/Users/shobhavj/Documents/SwiftFacebookIntegration/SwiftFacebookIntegration/FBSDKCoreKit.framework/Headers/FBSDKAppEvents.h"
-- "/Users/shobhavj/Documents/SwiftFacebookIntegration/SwiftFacebookIntegration/Bolts.framework/Headers/BFAppLinkTarget.h"
-- "/Users/shobhavj/Documents/SwiftFacebookIntegration/SwiftFacebookIntegration/FBSDKCoreKit.framework/Headers/FBSDKCoreKit.h"
-- "/Users/shobhavj/Documents/SwiftFacebookIntegration/SwiftFacebookIntegration/FBSDKLoginKit.framework/Headers/FBSDKLoginKit.h"
-- "/Users/shobhavj/Documents/SwiftFacebookIntegration/SwiftFacebookIntegration/FBSDKLoginKit.framework/Headers/FBSDKLoginManagerLoginResult.h"
-- "/Users/shobhavj/Documents/SwiftFacebookIntegration/SwiftFacebookIntegration/FBSDKCoreKit.framework/Headers/FBSDKGraphRequestDataAttachment.h"
-- "/Users/shobhavj/Documents/SwiftFacebookIntegration/SwiftFacebookIntegration/Bolts.framework/Headers/BFMeasurementEvent.h"
-- "/Users/shobhavj/Documents/SwiftFacebookIntegration/SwiftFacebookIntegration/FBSDKCoreKit.framework/Headers/FBSDKGraphRequest.h"
-- "/Users/shobhavj/Documents/SwiftFacebookIntegration/SwiftFacebookIntegration/FBSDKCoreKit.framework/Headers/FBSDKProfilePictureView.h"
-- "/Users/shobhavj/Documents/SwiftFacebookIntegration/SwiftFacebookIntegration/FBSDKLoginKit.framework/Headers/FBSDKTooltipView.h"
-- "/Users/shobhavj/Documents/SwiftFacebookIntegration/SwiftFacebookIntegration/FBSDKLoginKit.framework/Headers/FBSDKLoginTooltipView.h"
-- "/Users/shobhavj/Documents/SwiftFacebookIntegration/SwiftFacebookIntegration/Bolts.framework/Headers/BFAppLinkReturnToRefererView.h"
-- "/Users/shobhavj/Documents/SwiftFacebookIntegration/SwiftFacebookIntegration/FBSDKCoreKit.framework/Headers/FBSDKUtility.h"
-- "/Users/shobhavj/Documents/SwiftFacebookIntegration/SwiftFacebookIntegration/FBSDKCoreKit.framework/Headers/FBSDKAppLinkUtility.h"
-- "/Users/shobhavj/Documents/SwiftFacebookIntegration/SwiftFacebookIntegration/Bolts.framework/Modules/module.modulemap"
-- "/Users/shobhavj/Documents/SwiftFacebookIntegration/SwiftFacebookIntegration/FBSDKCoreKit.framework/Modules/module.modulemap"
-- "/Users/shobhavj/Documents/SwiftFacebookIntegration/SwiftFacebookIntegration/FBSDKLoginKit.framework/Modules/module.modulemap"
+- "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/Bolts.framework/Headers/BFURL.h"
+- "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/Bolts.framework/Headers/BFCancellationTokenSource.h"
+- "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/Bolts.framework/Headers/BFTaskCompletionSource.h"
+- "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/FBSDKCoreKit.framework/Headers/FBSDKProfile.h"
+- "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/FBSDKCoreKit.framework/Headers/FBSDKApplicationDelegate.h"
+- "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/ObjCBridg.h"
+- "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/Bolts.framework/Headers/BFAppLinkResolving.h"
+- "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/FBSDKCoreKit.framework/Headers/FBSDKCopying.h"
+- "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/FBSDKCoreKit.framework/Headers/FBSDKMutableCopying.h"
+- "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/Bolts.framework/Headers/BFAppLink.h"
+- "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/Bolts.framework/Headers/BFTask.h"
+- "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/Bolts.framework/Headers/BFCancellationToken.h"
+- "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/FBSDKCoreKit.framework/Headers/FBSDKAccessToken.h"
+- "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/Bolts.framework/Headers/BFAppLinkNavigation.h"
+- "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/Bolts.framework/Headers/BFCancellationTokenRegistration.h"
+- "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/FBSDKCoreKit.framework/Headers/FBSDKGraphRequestConnection.h"
+- "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/FBSDKCoreKit.framework/Headers/FBSDKButton.h"
+- "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/FBSDKLoginKit.framework/Headers/FBSDKLoginButton.h"
+- "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/FBSDKLoginKit.framework/Headers/FBSDKLoginManager.h"
+- "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/FBSDKCoreKit.framework/Headers/FBSDKTestUsersManager.h"
+- "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/Bolts.framework/Headers/BFAppLinkReturnToRefererController.h"
+- "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/FBSDKCoreKit.framework/Headers/FBSDKAppLinkResolver.h"
+- "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/Bolts.framework/Headers/BFWebViewAppLinkResolver.h"
+- "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/FBSDKCoreKit.framework/Headers/FBSDKGraphErrorRecoveryProcessor.h"
+- "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/Bolts.framework/Headers/BFExecutor.h"
+- "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/FBSDKCoreKit.framework/Headers/FBSDKSettings.h"
+- "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/Bolts.framework/Headers/BFTask+Exceptions.h"
+- "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/FBSDKCoreKit.framework/Headers/FBSDKMacros.h"
+- "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/Bolts.framework/Headers/Bolts.h"
+- "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/FBSDKCoreKit.framework/Headers/FBSDKConstants.h"
+- "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/FBSDKLoginKit.framework/Headers/FBSDKLoginConstants.h"
+- "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/FBSDKCoreKit.framework/Headers/FBSDKAppEvents.h"
+- "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/Bolts.framework/Headers/BFAppLinkTarget.h"
+- "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/FBSDKCoreKit.framework/Headers/FBSDKCoreKit.h"
+- "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/FBSDKLoginKit.framework/Headers/FBSDKLoginKit.h"
+- "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/FBSDKLoginKit.framework/Headers/FBSDKLoginManagerLoginResult.h"
+- "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/FBSDKCoreKit.framework/Headers/FBSDKGraphRequestDataAttachment.h"
+- "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/Bolts.framework/Headers/BFMeasurementEvent.h"
+- "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/FBSDKCoreKit.framework/Headers/FBSDKGraphRequest.h"
+- "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/FBSDKCoreKit.framework/Headers/FBSDKProfilePictureView.h"
+- "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/FBSDKLoginKit.framework/Headers/FBSDKTooltipView.h"
+- "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/FBSDKLoginKit.framework/Headers/FBSDKLoginTooltipView.h"
+- "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/Bolts.framework/Headers/BFAppLinkReturnToRefererView.h"
+- "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/FBSDKCoreKit.framework/Headers/FBSDKUtility.h"
+- "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/FBSDKCoreKit.framework/Headers/FBSDKAppLinkUtility.h"
+- "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/Bolts.framework/Modules/module.modulemap"
+- "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/FBSDKCoreKit.framework/Modules/module.modulemap"
+- "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/FBSDKLoginKit.framework/Modules/module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreData.framework/Headers/CoreData.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVFoundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/AVKit.framework/Headers/AVKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
-interface-hash: "c10a72708381f86759549c9c75af979f"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
+interface-hash: "9555e8ad3a3dd90fb092c10704c91d0d"

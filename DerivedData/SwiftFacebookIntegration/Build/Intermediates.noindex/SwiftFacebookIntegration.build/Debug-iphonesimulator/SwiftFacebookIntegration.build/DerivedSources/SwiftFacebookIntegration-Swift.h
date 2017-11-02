@@ -255,20 +255,38 @@ SWIFT_CLASS("_TtC24SwiftFacebookIntegration9imageCell")
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified storyDetailsLbl1;
 @property (nonatomic, weak) IBOutlet UIView * _Null_unspecified videoPlayerSuperView;
 - (void)awakeFromNib;
-- (void)playerItemDidReachEndWithNotification:(NSNotification * _Nonnull)notification;
 - (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER SWIFT_AVAILABILITY(ios,introduced=3.0);
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
-SWIFT_CLASS("_TtC24SwiftFacebookIntegration7newCell")
-@interface newCell : UITableViewCell
-@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified images;
-@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified userName;
-@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified profilePic;
-@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified storyDetailsLbl;
-@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified dateLbl;
-@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified timeLbl;
+SWIFT_CLASS("_TtC24SwiftFacebookIntegration8linkCell")
+@interface linkCell : UITableViewCell
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified linkLbl;
+- (void)awakeFromNib;
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated;
+- (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER SWIFT_AVAILABILITY(ios,introduced=3.0);
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC24SwiftFacebookIntegration10statusCell")
+@interface statusCell : UITableViewCell
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified statusLbl;
+- (void)awakeFromNib;
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated;
+- (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER SWIFT_AVAILABILITY(ios,introduced=3.0);
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC24SwiftFacebookIntegration15videoPlayerCell")
+@interface videoPlayerCell : UITableViewCell
+@property (nonatomic, weak) IBOutlet UIView * _Null_unspecified videoView;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified videoLabel;
+- (void)awakeFromNib;
+- (void)playerItemDidReachEndWithNotification:(NSNotification * _Nonnull)notification;
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated;
 - (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER SWIFT_AVAILABILITY(ios,introduced=3.0);
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end

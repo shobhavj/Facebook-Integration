@@ -2,7 +2,7 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <array>
-	<string>Foundation</string>
+	<string>FBSDKLoginKit</string>
 	<string>XCTest</string>
 	<string>CoreData</string>
 	<string>SwiftFacebookIntegration</string>
@@ -10,6 +10,6 @@
 	<string>AVKit</string>
 	<string>UIKit</string>
 	<string>AVFoundation</string>
-	<string>FBSDKLoginKit</string>
+	<string>Foundation</string>
 </array>
 </plist>

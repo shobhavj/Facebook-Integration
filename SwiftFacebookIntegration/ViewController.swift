@@ -17,6 +17,8 @@ class ViewController: UIViewController{
     var name : String?
     var userProfileImage :UIImage?
     var stories = [String]()
+    var photoStories = [String]()
+    var videoStories = [String]()
     var sources = [String]()
     var links    = [String]()
     var dates = [String]()
@@ -41,6 +43,10 @@ class ViewController: UIViewController{
     }
     
     func fetchUserProfile(){
+       
+//        print("\(FBSDKAccessToken.current())")
+//        let acessToken = String(format:"%@", FBSDKAccessToken.current().tokenString) as String
+//        print("\(acessToken)")
         
         let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"id, email, name, picture.width(480).height(480)"])
         graphRequest.start(completionHandler: { (connection, result, error) -> Void in
@@ -75,16 +81,12 @@ class ViewController: UIViewController{
     
     func fetchUserStatus() {
 
-      //  https://graph.facebook.com/v2.10//oauth/access_token?client_id=1283177111809659&client_secret=00e6aab9e701eeeae45b218fe94f52ba&grant_type=client_credentials
-        
-        // https://graph.facebook.com/key=value&access_token=1283177111809659|00e6aab9e701eeeae45b218fe94f52ba
-       // https://graph.facebook.com/oauth/access_token?client_id=1283177111809659&client_secret=00e6aab9e701eeeae45b218fe94f52ba&grant_type=client_credentials
-       // 1283177111809659 , 00e6aab9e701eeeae45b218fe94f52ba
-      //  let url1 = URL(string: "https://graph.facebook.com/oauth/access_token?client_id=" + ConfigurationManager.AppSettings["FacebookAppId"] + "&client_secret=" + ConfigurationManager.AppSettings["FacebookAppSecret"] &grant_type=client_credentials
-       
         let sessionConfig: URLSessionConfiguration = URLSessionConfiguration.default
         let session: URLSession  = URLSession.init(configuration: sessionConfig)
-        let url = URL(string: "https://graph.facebook.com/v2.10/me/posts?fields=story,caption,name,description,created_time,permalink_url,parent_id,with_tags,from,message,icon,link,message_tags,picture,privacy,shares,type,id,place,source&access_token=EAACEdEose0cBAGKjhlJwPS1JZAOrpvRHRbg4ZCKIcW5BTW00Fb3DsZAQvHcgII1GQDdA4HmPew2MVzpau2siQSg1K5balz2gOZApWwjsFdPKEZCfDtCUhb0ITXlOX0ShGAZBVZCWiRL040N2QKeKyLeSXxnd5C6qTf3gwWlDZAr1kIjp4rCKL5yyropi0cBLtZAAZD")!
+        
+        //hardcoding access token
+      let url = URL(string: "https://graph.facebook.com/v2.10/me/posts?fields=story,caption,name,description,created_time,permalink_url,parent_id,with_tags,from,message,icon,link,message_tags,picture,privacy,shares,type,id,place,source&access_token=EAACEdEose0cBAPQNybzrmPzs9fnEqinHZB25lQRZB36amKWa6Ham57LMrSZAa22PfK8W90ou1abyMmfRCs6AZAtnPHfkC8kkJBHiGDv0yBBbturJIWZBMwU6QHs7FMUM4cu6FgurKExsk08t28xTK2S1ZCzKyKB4NpoPBZAk9d05QsAgJ5KStexfeKo9QgoZAeQZD")!
+        
         
         let task: URLSessionDataTask =
             session.dataTask(with: url) { (data, response, error) in
@@ -109,18 +111,26 @@ class ViewController: UIViewController{
                                             if let photoblogs = blog["picture"] as? String{
                                             self.images.append(photoblogs)
                                             }
+                                            if let story = blog["story"] as? String {
+                                                self.photoStories.append(story)
+                                            }
                                        case "video":
                                             if let videoblogs = blog["source"] as? String{
                                             self.videos.append(videoblogs)
+                                            }
+                                            if let story = blog["story"] as? String {
+                                                self.videoStories.append(story)
                                             }
                                        case "link":
                                             if let linkblogs = blog["name"] as? String{
                                             self.links.append(linkblogs)
                                             }
+                                    
                                        case "status":
                                             if let statusblogs = blog["story"] as? String{
                                             self.status.append(statusblogs)
                                             }
+                                    
                                        default:
                                             break
                                 }
@@ -129,7 +139,7 @@ class ViewController: UIViewController{
                                 }
 
                             }
-                            
+                            //getting date and time
                             for i in 0 ..< self.createdTimeList.count{
                                 let str1 = self.createdTimeList[i]
                                 let index1 = str1.index(of: "T") ?? str1.endIndex
@@ -162,6 +172,8 @@ class ViewController: UIViewController{
             postStatusController.nameFromFb = name
             postStatusController.profileImage = userProfileImage
             postStatusController.storyDetails = stories
+            postStatusController.photoStoryDetails = photoStories
+            postStatusController.videoStoryDetails = videoStories
             postStatusController.dateDetails = dates
             postStatusController.timeDetails = times
             postStatusController.locationDetails = locations
