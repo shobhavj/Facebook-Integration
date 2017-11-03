@@ -174,6 +174,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_feature(modules)
 @import UIKit;
 @import Foundation;
+@import CoreGraphics;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -213,6 +214,7 @@ SWIFT_CLASS("_TtC24SwiftFacebookIntegration29PostStatusTableViewController")
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
 - (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView SWIFT_WARN_UNUSED_RESULT;
+- (CGFloat)tableView:(UITableView * _Nonnull)tableView heightForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
 - (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 - (void)playerItemDidReachEndWithNotification:(NSNotification * _Nonnull)notification;
@@ -244,10 +246,8 @@ SWIFT_CLASS("_TtC24SwiftFacebookIntegration14ViewController")
 
 SWIFT_CLASS("_TtC24SwiftFacebookIntegration9imageCell")
 @interface imageCell : UITableViewCell
-@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified dummyLabel;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified userName1;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified dateLbl1;
-@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified images;
 @property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified profilePic1;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified locationLbl1;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified timeLbl1;
@@ -262,6 +262,10 @@ SWIFT_CLASS("_TtC24SwiftFacebookIntegration9imageCell")
 
 SWIFT_CLASS("_TtC24SwiftFacebookIntegration8linkCell")
 @interface linkCell : UITableViewCell
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified timeLbl3;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified dateLbl3;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified username3;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified profilePicLink;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified linkLbl;
 - (void)awakeFromNib;
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated;
@@ -272,6 +276,10 @@ SWIFT_CLASS("_TtC24SwiftFacebookIntegration8linkCell")
 
 SWIFT_CLASS("_TtC24SwiftFacebookIntegration10statusCell")
 @interface statusCell : UITableViewCell
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified username4;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified timeLbl4;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified dateLbl4;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified profilePicStatus;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified statusLbl;
 - (void)awakeFromNib;
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated;
@@ -282,7 +290,11 @@ SWIFT_CLASS("_TtC24SwiftFacebookIntegration10statusCell")
 
 SWIFT_CLASS("_TtC24SwiftFacebookIntegration15videoPlayerCell")
 @interface videoPlayerCell : UITableViewCell
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified username2;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified timeLbl2;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified dateLbl2;
 @property (nonatomic, weak) IBOutlet UIView * _Null_unspecified videoView;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified profilePicVideo;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified videoLabel;
 - (void)awakeFromNib;
 - (void)playerItemDidReachEndWithNotification:(NSNotification * _Nonnull)notification;

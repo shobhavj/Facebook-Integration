@@ -19,8 +19,14 @@ class PostStatusTableViewController: UITableViewController{
     var videoStoryDetails = [String]()
     var sourceDetails = [String]()
     var linkDetails = [String]()
-    var dateDetails = [String]()
-    var timeDetails = [String]()
+    var dateDetailsPhoto = [String]()
+    var timeDetailsPhoto = [String]()
+    var dateDetailsVideo = [String]()
+    var timeDetailsVideo = [String]()
+    var dateDetailsLink = [String]()
+    var timeDetailsLink = [String]()
+    var dateDetailsStatus = [String]()
+    var timeDetailsStatus = [String]()
     var locationDetails = [String]()
     var imageDetails = [String]()
     var videoDetails = [String]()
@@ -30,7 +36,8 @@ class PostStatusTableViewController: UITableViewController{
     var videoArray = [String]()
     var linkArray = [String]()
     var statusArray = [String]()
-    var combinedArray = [String]()
+    var combinedArray =  [[String]]()
+    
    
     var avPlayer: AVPlayer!
     var visibleIP : IndexPath?
@@ -47,6 +54,7 @@ class PostStatusTableViewController: UITableViewController{
     var ln = 0
     var st = 0
     var j = 0
+    var p = 0
     
     var ip = IndexPath(row: 0, section: 0)
     override func viewDidLoad() {
@@ -64,30 +72,35 @@ class PostStatusTableViewController: UITableViewController{
         numberOfRowsAtSection = [imageDetails.count,videoURLs.count,linkDetails.count,statusDetails.count]
         print("NumberofRowsatSectionarray",numberOfRowsAtSection)
         
-        if j < typeDetails.count{
-            switch(typeDetails[j]){
-                
-            case "photo":
+       while j < typeDetails.count{
+            if (typeDetails[j] == "photo"){
+                print("In Photo",typeDetails[j])
                 photoArray.append(typeDetails[j])
-            case "video":
+            }
+            
+            if (typeDetails[j] == "video"){
+                print("In Video",typeDetails[j])
                 videoArray.append(typeDetails[j])
-            case "link":
+            }
+            if(typeDetails[j] == "link"){
+                 print("In LInk",typeDetails[j])
                 linkArray.append(typeDetails[j])
-            case "status":
+            }
+            if(typeDetails[j] == "status"){
+                print("In LInk",typeDetails[j])
                 statusArray.append(typeDetails[j])
-            default:
-                print ("Default")
+               
             }
             j = j + 1
-        }
-      
-        for p in  photoArray{
-            print(p)
-        }
-        combinedArray = photoArray
-       
-    }
+            }
 
+        combinedArray.append(photoArray)
+        combinedArray.append(videoArray)
+        combinedArray.append(linkArray)
+        combinedArray.append(statusArray)
+        print("combined array",combinedArray)
+        //self.tableView.reloadData()
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -96,9 +109,18 @@ class PostStatusTableViewController: UITableViewController{
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 4
     }
-    
-    
-
+   
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let section = indexPath.section
+        if section == 2 {
+            return 100.0
+        }
+        else if section == 3{
+            return 100.0
+        }
+        return 383.0
+       
+    }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         var rows : Int = 0
@@ -111,58 +133,65 @@ class PostStatusTableViewController: UITableViewController{
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        print("Row", indexPath.row)
-        switch(typeDetails[indexPath.row]){
+        print("Section,Row",indexPath.section, indexPath.row)
+        switch(combinedArray[indexPath.section][indexPath.row]){
         case "photo" :
-                var ip1 = IndexPath(row: 0, section: 0)
-                ip1.section = 0
-                let cell = tableView.dequeueReusableCell(withIdentifier: "ImageDetail", for:ip1) as! imageCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ImageDetail", for:indexPath) as! imageCell
                 if(im < imageDetails.count){
                     let imageUrl = imageDetails[im]
                     let url = URL(string:imageUrl)
                     let data = try? Data(contentsOf: url!)
                     cell.storyDetailsLbl1.text = photoStoryDetails[im]
+                    cell.profilePic1.image = profileImage
+                    cell.dateLbl1.text = dateDetailsPhoto[im]
+                    cell.timeLbl1.text = timeDetailsPhoto[im]
+                    cell.userName1.text = nameFromFb
+                    print(imageDetails[im])
                     cell.images1.image = UIImage(data: data!)
                 }
                 im = im + 1
-                i = i + 1
                 return cell
-      
+            
         case "video" :
-                var ip2 = IndexPath(row: 0, section: 0)
-                ip2.section = 1
-                let cell1 = tableView.dequeueReusableCell(withIdentifier: "VideoCell", for: ip2) as! videoPlayerCell
+                let cell1 = tableView.dequeueReusableCell(withIdentifier: "VideoCell", for: indexPath) as! videoPlayerCell
                 cell1.videoView.isHidden = false
                 if  vd < videoURLs.count{
                     let urls = videoURLs[vd]
+                    cell1.profilePicVideo.image = profileImage
                     cell1.videoPlayerItem = AVPlayerItem.init(url: urls)
                     cell1.videoLabel.text = videoStoryDetails[vd]
+                    cell1.username2.text = nameFromFb
+                    cell1.dateLbl2.text =  dateDetailsVideo[vd]
+                    cell1.timeLbl2.text = timeDetailsVideo[vd]
+                    print("Video",cell1.videoLabel.text!)
                 }
                 vd = vd + 1
-                i = i + 1
                 return cell1
         
         case "link":
-                var ip3 = IndexPath(row: 0, section: 0)
-                ip3.section = 2
-                let cell2 = tableView.dequeueReusableCell(withIdentifier: "LinkCell", for: ip3) as! linkCell
+                let cell2 = tableView.dequeueReusableCell(withIdentifier: "LinkCell", for: indexPath) as! linkCell
                 if  ln < linkDetails.count {
+                    cell2.profilePicLink.image = profileImage
                     cell2.linkLbl.text = linkDetails[ln]
-                   
+                    cell2.username3.text = nameFromFb
+                    cell2.dateLbl3.text =  dateDetailsLink[ln]
+                    cell2.timeLbl3.text = timeDetailsLink[ln]
+                    
+                    
                 }
                 ln = ln + 1
-                i = i + 1
                 return cell2
         
         default:
-                var ip4 = IndexPath(row: 0, section: 0)
-                ip4.section = 3
-                 let cell3 = tableView.dequeueReusableCell(withIdentifier: "StatusCell", for: ip4) as! statusCell
-                    if  st < statusDetails.count{
+                 let cell3 = tableView.dequeueReusableCell(withIdentifier: "StatusCell", for: indexPath) as! statusCell
+                 if  st < statusDetails.count{
+                        cell3.profilePicStatus.image = profileImage
                         cell3.statusLbl.text = statusDetails[st]
-                    }
+                        cell3.username4.text = nameFromFb
+                        cell3.dateLbl4.text = dateDetailsStatus[st]
+                        cell3.timeLbl4.text = timeDetailsStatus[st]
+                 }
                     st = st + 1
-                     i = i + 1
                     return cell3
         }
         
@@ -179,11 +208,11 @@ class PostStatusTableViewController: UITableViewController{
             if let videoCell = self.tableView.cellForRow(at: ip) as?videoPlayerCell{
                 cells.append(videoCell)
             }
-            else{
-                if let imagesCell = self.tableView.cellForRow(at: ip) as?imageCell{
-                cells.append(imagesCell)
-                }
-            }
+//            else{
+//                if let imagesCell = self.tableView.cellForRow(at: ip) as?imageCell{
+//                cells.append(imagesCell)
+//                }
+//            }
         }
         let cellCount = cells.count
         if cellCount == 0 {return}
@@ -196,7 +225,7 @@ class PostStatusTableViewController: UITableViewController{
                 self.playVideoOnTheCell(cell: videoCell, indexPath: (indexPaths?.last)!)
             }
         }
-        if cellCount >= 2 {
+        if cellCount >= 2{
             for i in 0..<cellCount{
                 let cellRect = self.tableView.rectForRow(at: (indexPaths?[i])!)
                 let intersect = cellRect.intersection(self.tableView.bounds)

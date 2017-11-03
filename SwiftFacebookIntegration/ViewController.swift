@@ -19,10 +19,23 @@ class ViewController: UIViewController{
     var stories = [String]()
     var photoStories = [String]()
     var videoStories = [String]()
+    var photoTime = [String]()
+    var videoTime = [String]()
+    var linkTime = [String]()
+    var statusTime = [String]()
     var sources = [String]()
     var links    = [String]()
     var dates = [String]()
     var times = [String]()
+    var datesP = [String]()
+    var timesP = [String]()
+    var datesV = [String]()
+    var timesV = [String]()
+    var datesL = [String]()
+    var timesL = [String]()
+    var datesS = [String]()
+    var timesS = [String]()
+    
     var createdTimeList = [String]()
     var locations = [String]()
     var videos = [String]()
@@ -85,7 +98,7 @@ class ViewController: UIViewController{
         let session: URLSession  = URLSession.init(configuration: sessionConfig)
         
         //hardcoding access token
-      let url = URL(string: "https://graph.facebook.com/v2.10/me/posts?fields=story,caption,name,description,created_time,permalink_url,parent_id,with_tags,from,message,icon,link,message_tags,picture,privacy,shares,type,id,place,source&access_token=EAACEdEose0cBAPQNybzrmPzs9fnEqinHZB25lQRZB36amKWa6Ham57LMrSZAa22PfK8W90ou1abyMmfRCs6AZAtnPHfkC8kkJBHiGDv0yBBbturJIWZBMwU6QHs7FMUM4cu6FgurKExsk08t28xTK2S1ZCzKyKB4NpoPBZAk9d05QsAgJ5KStexfeKo9QgoZAeQZD")!
+      let url = URL(string: "https://graph.facebook.com/v2.10/me/posts?fields=story,caption,name,description,created_time,permalink_url,parent_id,with_tags,from,message,icon,link,message_tags,picture,privacy,shares,type,id,place,source&access_token=EAACEdEose0cBAARrG1jotNZA1gQcNooPhevJsINhTSCH3d1TIYFVoBT2mE6FjIWzmZBMeoMW90afjFiNAZBNOe39ZCCqlhZBPcfqZBswsPZBUSxmmtx0Bq8aZCh0tnKFYsxEpCCbVnZBJzn8kOtE5vvlNDMvjoxpkHmzhlTJjJvK6EZAepkYTOSNFXybUw9W96ZB84ZD")!
         
         
         let task: URLSessionDataTask =
@@ -114,23 +127,33 @@ class ViewController: UIViewController{
                                             if let story = blog["story"] as? String {
                                                 self.photoStories.append(story)
                                             }
-                                       case "video":
+                                            if let timeP = blog["created_time"] as? String{
+                                                self.photoTime.append(timeP)
+                                            }
+                                        case "video":
                                             if let videoblogs = blog["source"] as? String{
                                             self.videos.append(videoblogs)
                                             }
                                             if let story = blog["story"] as? String {
                                                 self.videoStories.append(story)
                                             }
+                                            if let timeV = blog["created_time"] as? String{
+                                                self.videoTime.append(timeV)
+                                            }
                                        case "link":
                                             if let linkblogs = blog["name"] as? String{
                                             self.links.append(linkblogs)
                                             }
-                                    
+                                            if let timeL = blog["created_time"] as? String{
+                                                self.linkTime.append(timeL)
+                                            }
                                        case "status":
                                             if let statusblogs = blog["story"] as? String{
                                             self.status.append(statusblogs)
                                             }
-                                    
+                                            if let timeS = blog["created_time"] as? String{
+                                                self.statusTime.append(timeS)
+                                            }
                                        default:
                                             break
                                 }
@@ -148,12 +171,43 @@ class ViewController: UIViewController{
                                 let start = str2.index(str2.startIndex, offsetBy: 11)
                                 let end = str2.index(str2.endIndex, offsetBy: -8)
                                 let time = str2[start..<end]
-                                self.times.append(String(describing: time))
-                                self.dates.append(String(describing: date))
-                                
+                                self.timesP.append(String(describing: time))
+                                self.datesP.append(String(describing: date))
                                 }
+                            for i in 0 ..< self.videoTime.count{
+                                let str1 = self.videoTime[i]
+                                let index1 = str1.index(of: "T") ?? str1.endIndex
+                                let date = str1[..<index1]
+                                let str2 = self.videoTime[i]
+                                let start = str2.index(str2.startIndex, offsetBy: 11)
+                                let end = str2.index(str2.endIndex, offsetBy: -8)
+                                let time = str2[start..<end]
+                                self.timesV.append(String(describing: time))
+                                self.datesV.append(String(describing: date))
                             }
-                      
+                            for i in 0 ..< self.linkTime.count{
+                                let str1 = self.linkTime[i]
+                                let index1 = str1.index(of: "T") ?? str1.endIndex
+                                let date = str1[..<index1]
+                                let str2 = self.linkTime[i]
+                                let start = str2.index(str2.startIndex, offsetBy: 11)
+                                let end = str2.index(str2.endIndex, offsetBy: -8)
+                                let time = str2[start..<end]
+                                self.timesL.append(String(describing: time))
+                                self.datesL.append(String(describing: date))
+                            }
+                            for i in 0 ..< self.statusTime.count{
+                                let str1 = self.statusTime[i]
+                                let index1 = str1.index(of: "T") ?? str1.endIndex
+                                let date = str1[..<index1]
+                                let str2 = self.statusTime[i]
+                                let start = str2.index(str2.startIndex, offsetBy: 11)
+                                let end = str2.index(str2.endIndex, offsetBy: -8)
+                                let time = str2[start..<end]
+                                self.timesS.append(String(describing: time))
+                                self.datesS.append(String(describing: date))
+                            }
+                            }
                     } catch {
                         print("Error deserializing JSON: \(error)")
                     }
@@ -174,8 +228,15 @@ class ViewController: UIViewController{
             postStatusController.storyDetails = stories
             postStatusController.photoStoryDetails = photoStories
             postStatusController.videoStoryDetails = videoStories
-            postStatusController.dateDetails = dates
-            postStatusController.timeDetails = times
+            postStatusController.dateDetailsPhoto = datesP
+            postStatusController.timeDetailsPhoto = timesP
+            postStatusController.dateDetailsVideo = datesV
+            postStatusController.timeDetailsVideo = timesV
+            postStatusController.dateDetailsLink = datesL
+            postStatusController.timeDetailsLink = timesL
+            postStatusController.dateDetailsStatus = datesS
+            postStatusController.timeDetailsStatus = timesS
+            
             postStatusController.locationDetails = locations
             postStatusController.imageDetails = images
             postStatusController.videoDetails = videos

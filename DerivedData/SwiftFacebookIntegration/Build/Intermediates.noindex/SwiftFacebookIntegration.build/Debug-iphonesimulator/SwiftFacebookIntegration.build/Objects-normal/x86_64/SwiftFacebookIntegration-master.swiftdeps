@@ -1,11 +1,11 @@
 version: "Apple Swift version 4.0 (swiftlang-900.0.65 clang-900.0.37)"
 options: "d8aca027a414d7f33f8390e1fa1240b1"
-build_time: [1509657577, 417205000]
+build_time: [1509741606, 950556000]
 inputs:
-  "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/ViewController.swift": [1509654171, 0]
+  "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/ViewController.swift": [1509741583, 0]
   "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/AppDelegate.swift": [1508528260, 0]
-  "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/imageCell.swift": [1509570791, 0]
-  "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/PostStatusTableViewController.swift": [1509657577, 0]
-  "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/videoPlayerCell.swift": [1509648382, 0]
-  "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/linkCell.swift": [1509571846, 0]
-  "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/statusCell.swift": [1509572445, 0]
+  "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/imageCell.swift": [1509738760, 0]
+  "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/PostStatusTableViewController.swift": [1509741606, 0]
+  "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/videoPlayerCell.swift": [1509741296, 0]
+  "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/linkCell.swift": [1509741296, 0]
+  "/Users/shobhavj/Desktop/SwiftFacebookIntegration/SwiftFacebookIntegration/statusCell.swift": [1509741296, 0]

@@ -10,6 +10,10 @@ import UIKit
 
 class linkCell: UITableViewCell {
 
+    @IBOutlet weak var timeLbl3: UILabel!
+    @IBOutlet weak var dateLbl3: UILabel!
+    @IBOutlet weak var username3: UILabel!
+    @IBOutlet weak var profilePicLink: UIImageView!
     @IBOutlet weak var linkLbl: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()

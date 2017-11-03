@@ -7,10 +7,15 @@ provides-member:
 - ["24SwiftFacebookIntegration10statusCellC", ""]
 provides-dynamic-lookup:
 - "awakeFromNib"
+- "dateLbl4"
+- "profilePicStatus"
 - "setSelected"
 - "statusLbl"
+- "timeLbl4"
+- "username4"
 depends-top-level:
 - "Bool"
+- "UIImageView"
 - "UILabel"
 - "UITableViewCell"
 - "statusCell"
@@ -44,11 +49,16 @@ depends-member:
 - !private ["So8NSCodingP", "setSelected"]
 - ["So8NSCodingP", ""]
 - ["So8NSObjectC", "Bool"]
+- ["So8NSObjectC", "UIImageView"]
 - ["So8NSObjectC", "UILabel"]
 - ["So8NSObjectC", "awakeFromNib"]
+- ["So8NSObjectC", "dateLbl4"]
 - ["So8NSObjectC", "init"]
+- ["So8NSObjectC", "profilePicStatus"]
 - ["So8NSObjectC", "setSelected"]
 - ["So8NSObjectC", "statusLbl"]
+- ["So8NSObjectC", "timeLbl4"]
+- ["So8NSObjectC", "username4"]
 - !private ["So16NSObjectProtocolP", "awakeFromNib"]
 - !private ["So16NSObjectProtocolP", "init"]
 - !private ["So16NSObjectProtocolP", "setSelected"]
@@ -90,32 +100,47 @@ depends-member:
 - !private ["So30UIPasteConfigurationSupportingP", "setSelected"]
 - ["So30UIPasteConfigurationSupportingP", ""]
 - ["So11UIResponderC", "Bool"]
+- ["So11UIResponderC", "UIImageView"]
 - ["So11UIResponderC", "UILabel"]
 - ["So11UIResponderC", "awakeFromNib"]
+- ["So11UIResponderC", "dateLbl4"]
 - ["So11UIResponderC", "init"]
+- ["So11UIResponderC", "profilePicStatus"]
 - ["So11UIResponderC", "setSelected"]
 - ["So11UIResponderC", "statusLbl"]
+- ["So11UIResponderC", "timeLbl4"]
+- ["So11UIResponderC", "username4"]
 - !private ["So30UIResponderStandardEditActionsP", "awakeFromNib"]
 - !private ["So30UIResponderStandardEditActionsP", "init"]
 - !private ["So30UIResponderStandardEditActionsP", "setSelected"]
 - ["So30UIResponderStandardEditActionsP", ""]
 - ["So15UITableViewCellC", "Bool"]
+- ["So15UITableViewCellC", "UIImageView"]
 - ["So15UITableViewCellC", "UILabel"]
 - ["So15UITableViewCellC", "awakeFromNib"]
+- ["So15UITableViewCellC", "dateLbl4"]
 - ["So15UITableViewCellC", "init"]
+- ["So15UITableViewCellC", "profilePicStatus"]
 - ["So15UITableViewCellC", "setSelected"]
 - ["So15UITableViewCellC", "statusLbl"]
+- ["So15UITableViewCellC", "timeLbl4"]
+- ["So15UITableViewCellC", "username4"]
 - ["So15UITableViewCellC", ""]
 - !private ["So18UITraitEnvironmentP", "awakeFromNib"]
 - !private ["So18UITraitEnvironmentP", "init"]
 - !private ["So18UITraitEnvironmentP", "setSelected"]
 - ["So18UITraitEnvironmentP", ""]
 - ["So6UIViewC", "Bool"]
+- ["So6UIViewC", "UIImageView"]
 - ["So6UIViewC", "UILabel"]
 - ["So6UIViewC", "awakeFromNib"]
+- ["So6UIViewC", "dateLbl4"]
 - ["So6UIViewC", "init"]
+- ["So6UIViewC", "profilePicStatus"]
 - ["So6UIViewC", "setSelected"]
 - ["So6UIViewC", "statusLbl"]
+- ["So6UIViewC", "timeLbl4"]
+- ["So6UIViewC", "username4"]
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "awakeFromNib"]
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "init"]
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "setSelected"]
@@ -125,12 +150,17 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "setSelected"]
 - ["10Foundation27_KeyValueCodingAndObservingP", ""]
 - ["24SwiftFacebookIntegration10statusCellC", "Bool"]
+- ["24SwiftFacebookIntegration10statusCellC", "UIImageView"]
 - ["24SwiftFacebookIntegration10statusCellC", "UILabel"]
 - ["24SwiftFacebookIntegration10statusCellC", "awakeFromNib"]
+- ["24SwiftFacebookIntegration10statusCellC", "dateLbl4"]
 - ["24SwiftFacebookIntegration10statusCellC", "deinit"]
 - ["24SwiftFacebookIntegration10statusCellC", "init"]
+- ["24SwiftFacebookIntegration10statusCellC", "profilePicStatus"]
 - ["24SwiftFacebookIntegration10statusCellC", "setSelected"]
 - ["24SwiftFacebookIntegration10statusCellC", "statusLbl"]
+- ["24SwiftFacebookIntegration10statusCellC", "timeLbl4"]
+- ["24SwiftFacebookIntegration10statusCellC", "username4"]
 depends-nominal:
 - "So15CALayerDelegateP"
 - "s7CVarArgP"
@@ -240,4 +270,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/AVKit.framework/Headers/AVKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
-interface-hash: "cc7d72023995085bf2cffbf669ed94d5"
+interface-hash: "f5f5907224825d3954a17f4b5f392596"

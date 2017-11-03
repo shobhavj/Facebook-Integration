@@ -11,9 +11,11 @@ import AVFoundation
 
 class videoPlayerCell: UITableViewCell {
 
-   
+    @IBOutlet weak var username2: UILabel!
+    @IBOutlet weak var timeLbl2: UILabel!
+    @IBOutlet weak var dateLbl2: UILabel!
     @IBOutlet weak var videoView: UIView!
-    
+    @IBOutlet weak var profilePicVideo: UIImageView!
     @IBOutlet weak var videoLabel: UILabel!
     var avPlayer: AVPlayer?
     var avPlayerLayer: AVPlayerLayer?
@@ -52,8 +54,8 @@ class videoPlayerCell: UITableViewCell {
         //            avPlayerLayer?.frame = CGRect.init(x: 0, y: 0, width: (self.frame.size.height - 120) * 1.78, height: self.frame.size.height - 120)
         //
         //        }else{
-        let widthRequired = self.frame.size.width
-        avPlayerLayer?.frame = CGRect.init(x:-200, y:-120, width: 400, height: 235)
+       // let widthRequired = self.frame.size.width
+        avPlayerLayer?.frame = CGRect.init(x:-200, y:-75, width: 400, height: 235)
         // }
         self.backgroundColor = .clear
         self.videoView.layer.insertSublayer(avPlayerLayer!, at: 0)

@@ -8,8 +8,6 @@ provides-member:
 provides-dynamic-lookup:
 - "awakeFromNib"
 - "dateLbl1"
-- "dummyLabel"
-- "images"
 - "images1"
 - "locationLbl1"
 - "profilePic1"
@@ -50,8 +48,6 @@ depends-member:
 - ["So8NSObjectC", "UIView"]
 - ["So8NSObjectC", "awakeFromNib"]
 - ["So8NSObjectC", "dateLbl1"]
-- ["So8NSObjectC", "dummyLabel"]
-- ["So8NSObjectC", "images"]
 - ["So8NSObjectC", "images1"]
 - ["So8NSObjectC", "init"]
 - ["So8NSObjectC", "locationLbl1"]
@@ -95,8 +91,6 @@ depends-member:
 - ["So11UIResponderC", "UIView"]
 - ["So11UIResponderC", "awakeFromNib"]
 - ["So11UIResponderC", "dateLbl1"]
-- ["So11UIResponderC", "dummyLabel"]
-- ["So11UIResponderC", "images"]
 - ["So11UIResponderC", "images1"]
 - ["So11UIResponderC", "init"]
 - ["So11UIResponderC", "locationLbl1"]
@@ -113,8 +107,6 @@ depends-member:
 - ["So15UITableViewCellC", "UIView"]
 - ["So15UITableViewCellC", "awakeFromNib"]
 - ["So15UITableViewCellC", "dateLbl1"]
-- ["So15UITableViewCellC", "dummyLabel"]
-- ["So15UITableViewCellC", "images"]
 - ["So15UITableViewCellC", "images1"]
 - ["So15UITableViewCellC", "init"]
 - ["So15UITableViewCellC", "locationLbl1"]
@@ -132,8 +124,6 @@ depends-member:
 - ["So6UIViewC", "UIView"]
 - ["So6UIViewC", "awakeFromNib"]
 - ["So6UIViewC", "dateLbl1"]
-- ["So6UIViewC", "dummyLabel"]
-- ["So6UIViewC", "images"]
 - ["So6UIViewC", "images1"]
 - ["So6UIViewC", "init"]
 - ["So6UIViewC", "locationLbl1"]
@@ -154,8 +144,6 @@ depends-member:
 - ["24SwiftFacebookIntegration9imageCellC", "awakeFromNib"]
 - ["24SwiftFacebookIntegration9imageCellC", "dateLbl1"]
 - ["24SwiftFacebookIntegration9imageCellC", "deinit"]
-- ["24SwiftFacebookIntegration9imageCellC", "dummyLabel"]
-- ["24SwiftFacebookIntegration9imageCellC", "images"]
 - ["24SwiftFacebookIntegration9imageCellC", "images1"]
 - ["24SwiftFacebookIntegration9imageCellC", "init"]
 - ["24SwiftFacebookIntegration9imageCellC", "locationLbl1"]
@@ -273,4 +261,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/AVKit.framework/Headers/AVKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
-interface-hash: "b90aafb7a4266a21d0ef5e02fd416e7f"
+interface-hash: "069bf3ababcc89898cc13d378cd7d281"
